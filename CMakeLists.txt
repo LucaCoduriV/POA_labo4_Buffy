@@ -3,4 +3,4 @@ project(POA_labo4_Buffy)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(POA_labo4_Buffy main.cpp)
+add_executable(POA_labo4_Buffy src/main.cpp)
