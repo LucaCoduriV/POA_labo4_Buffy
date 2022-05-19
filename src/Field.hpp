@@ -2,8 +2,8 @@
 // Created by cfont on 19.05.2022.
 //
 
-#ifndef POA_LABO4_BUFFY_FIELD_H
-#define POA_LABO4_BUFFY_FIELD_H
+#ifndef POA_LABO4_BUFFY_FIELD_HPP
+#define POA_LABO4_BUFFY_FIELD_HPP
 #include <iostream>
 
 class Field {
@@ -15,4 +15,4 @@ private:
 };
 
 
-#endif //POA_LABO4_BUFFY_FIELD_H
+#endif //POA_LABO4_BUFFY_FIELD_HPP
