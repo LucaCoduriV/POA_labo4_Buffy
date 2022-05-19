@@ -9,4 +9,4 @@ add_executable(POA_labo4_Buffy src/main.cpp src/Field.cpp src/Field.h
         src/Humanoid/Vampire.cpp src/Humanoid/Vampire.h src/Action/Action.cpp
         src/Action/Action.h src/Action/Kill.cpp src/Action/Kill.h
         src/Action/Vampirize.cpp src/Action/Vampirize.h src/Action/Move.cpp
-        src/Action/Move.h src/Vector.h src/Vector.cpp)
+        src/Action/Move.h src/Vector.h src/Vector.cpp src/Controller.h src/Controller.cpp)
