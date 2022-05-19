@@ -3,7 +3,7 @@
 //
 
 #include "Field.h"
-#include "Humanoid/Humanoid.h"
+#include "humanoid/Humanoid.h"
 
 std::size_t Field::nextTurn() {
    // Déterminer les prochaines actions
