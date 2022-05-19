@@ -6,7 +6,9 @@
 #define POA_LABO4_BUFFY_VAMPIRE_HPP
 
 
-class Vampire {
+#include "Humanoid.h"
+
+class Vampire : public Humanoid {
 
 };
 

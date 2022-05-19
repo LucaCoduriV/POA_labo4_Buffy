@@ -6,7 +6,9 @@
 #define POA_LABO4_BUFFY_KILL_HPP
 
 
-class Kill {
+#include "Action.hpp"
+
+class Kill : public Action {
 
 };
 

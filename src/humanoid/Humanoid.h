@@ -14,16 +14,25 @@
 
 class Humanoid {
 public:
-   std::shared_ptr<Vector> getPosition();
+   std::shared_ptr<Vector> getPosition() const;
+
+   void display(std::shared_ptr<Displayer> displayer);
+
+   bool isAlive() const;
+
+   void setAction(const Field& field);
+
+   void executeAction(const Field& field);
 
 protected:
    explicit Humanoid(std::shared_ptr<Vector> position);
-   void display(std::shared_ptr<Displayer> displayer);
 
 private:
    std::shared_ptr<Vector> position;
    std::shared_ptr<Action> action;
    std::shared_ptr<Field> field;
+
+   bool alive;
 };
 
 
