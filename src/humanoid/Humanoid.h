@@ -10,12 +10,12 @@
 
 class Humanoid {
 public:
+   const Vector& getPosition();
 
-   Humanoid();
-   Vector& getPosition();
+protected:
+   Humanoid(Vector& position);
 
 private:
-
    Vector& position;
 
 };
