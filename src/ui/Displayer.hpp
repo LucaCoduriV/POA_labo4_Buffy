@@ -4,9 +4,12 @@
 
 #ifndef POA_LABO4_BUFFY_DISPLAYER_H
 #define POA_LABO4_BUFFY_DISPLAYER_H
-#include "../humanoid/Vampire.h"
-#include "../humanoid/Buffy.h"
-#include "../humanoid/Human.h"
+class Vampire;
+class Buffy;
+class Human;
+#include "../humanoid/Vampire.hpp"
+#include "../humanoid/Buffy.hpp"
+#include "../humanoid/Human.hpp"
 #include <memory>
 
 class Displayer {

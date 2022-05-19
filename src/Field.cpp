@@ -3,7 +3,7 @@
 //
 
 #include "Field.hpp"
-#include "humanoid/Humanoid.h"
+#include "humanoid/Humanoid.hpp"
 
 using namespace std;
 

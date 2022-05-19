@@ -2,7 +2,7 @@
 // Created by cfont on 19.05.2022.
 //
 
-#include "Humanoid.h"
+#include "Humanoid.hpp"
 
 #include <utility>
 

@@ -6,7 +6,7 @@
 #define POA_LABO4_BUFFY_HUMAN_HPP
 
 
-#include "Humanoid.h"
+#include "Humanoid.hpp"
 
 class Human : public Humanoid {
 

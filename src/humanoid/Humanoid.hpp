@@ -2,12 +2,12 @@
 // Created by cfont on 19.05.2022.
 //
 
-#ifndef POA_LABO4_BUFFY_HUMANOID_H
-#define POA_LABO4_BUFFY_HUMANOID_H
+#ifndef POA_LABO4_BUFFY_HUMANOID_HPP
+#define POA_LABO4_BUFFY_HUMANOID_HPP
+class Displayer;
 
-
+#include "../ui/Displayer.hpp"
 #include "../Vector.hpp"
-#include "../ui/Displayer.h"
 #include "../action/Action.hpp"
 #include "../Field.hpp"
 #include <memory>
@@ -32,8 +32,8 @@ private:
    std::shared_ptr<Action> action;
    std::shared_ptr<Field> field;
 
-   bool alive;
+   bool alive{};
 };
 
 
-#endif //POA_LABO4_BUFFY_HUMANOID_H
+#endif //POA_LABO4_BUFFY_HUMANOID_HPP

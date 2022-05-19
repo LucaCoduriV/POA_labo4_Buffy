@@ -4,11 +4,14 @@
 
 #ifndef POA_LABO4_BUFFY_FIELD_HPP
 #define POA_LABO4_BUFFY_FIELD_HPP
+class Displayer;
+class Humanoid;
+
 #include <iostream>
 #include <memory>
 #include <list>
-#include "ui/Displayer.h"
-#include "humanoid/Humanoid.h"
+#include "ui/Displayer.hpp"
+#include "humanoid/Humanoid.hpp"
 
 class Field {
 public:
