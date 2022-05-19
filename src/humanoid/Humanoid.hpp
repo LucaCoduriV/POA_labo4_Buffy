@@ -5,6 +5,7 @@
 #ifndef POA_LABO4_BUFFY_HUMANOID_HPP
 #define POA_LABO4_BUFFY_HUMANOID_HPP
 class Displayer;
+class Field;
 
 #include "../ui/Displayer.hpp"
 #include "../Vector.hpp"
@@ -30,9 +31,8 @@ protected:
 private:
    std::shared_ptr<Vector> position;
    std::shared_ptr<Action> action;
-   std::shared_ptr<Field> field;
 
-   bool alive{};
+   bool alive;
 };
 
 

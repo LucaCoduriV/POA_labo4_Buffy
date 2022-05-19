@@ -6,7 +6,9 @@
 #define POA_LABO4_BUFFY_MOVE_HPP
 
 
-class Move {
+#include "Action.hpp"
+
+class Move : public Action {
 
 };
 

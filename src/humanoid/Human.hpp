@@ -8,7 +8,7 @@
 
 #include "Humanoid.hpp"
 
-class Human : public Humanoid {
+class Human {
 
 };
 

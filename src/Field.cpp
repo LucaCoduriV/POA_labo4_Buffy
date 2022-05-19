@@ -29,3 +29,7 @@ std::size_t Field::nextTurn() {
          ++it;
    return turn++;
 }
+
+std::shared_ptr<Human> Field::findNearestHuman(std::shared_ptr<Human> human) const {
+   return nullptr;
+}

@@ -8,7 +8,7 @@
 
 #include "Action.hpp"
 
-class Kill : public Action {
+class Kill {
 
 };
 

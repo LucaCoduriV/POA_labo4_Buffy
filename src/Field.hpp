@@ -16,6 +16,7 @@ class Humanoid;
 class Field {
 public:
    std::size_t nextTurn();
+   std::shared_ptr<Human> findNearestHuman(std::shared_ptr<Human> human) const;
 
 private:
    size_t turn;

@@ -6,6 +6,8 @@
 #define POA_LABO4_BUFFY_VAMPIRIZE_H_PP
 
 
+#include "Action.hpp"
+
 class Vampirize {
 
 };
