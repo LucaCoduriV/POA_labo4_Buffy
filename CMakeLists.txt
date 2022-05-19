@@ -3,7 +3,7 @@ project(POA_labo4_Buffy)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(SOURCE src/Field.cpp src/Field.h
+set(SOURCE src/Field.cpp src/Field.hpp
 src/humanoid/Humanoid.cpp src/humanoid/Humanoid.h src/humanoid/Human.cpp
 src/humanoid/Human.h src/humanoid/Buffy.cpp src/humanoid/Buffy.h
 src/humanoid/Vampire.cpp src/humanoid/Vampire.h src/action/Action.cpp
