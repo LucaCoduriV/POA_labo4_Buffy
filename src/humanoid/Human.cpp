@@ -3,3 +3,11 @@
 //
 
 #include "Human.hpp"
+
+#include <utility>
+
+using namespace std;
+
+Human::Human(shared_ptr<Vector> position) : Humanoid(move(position)) {
+
+}

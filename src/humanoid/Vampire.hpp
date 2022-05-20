@@ -5,10 +5,13 @@
 #ifndef POA_LABO4_BUFFY_VAMPIRE_HPP
 #define POA_LABO4_BUFFY_VAMPIRE_HPP
 
-
+#include <memory>
 #include "Humanoid.hpp"
+#include "../Vector.hpp"
 
 class Vampire {
+public:
+   Vampire(std::shared_ptr<Vector> position);
 
 };
 

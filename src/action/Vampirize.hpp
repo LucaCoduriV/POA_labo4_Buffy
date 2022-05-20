@@ -8,7 +8,7 @@
 
 #include "Action.hpp"
 
-class Vampirize {
+class Vampirize : public Action {
 
 };
 

@@ -3,3 +3,9 @@
 //
 
 #include "Vampire.hpp"
+
+#include <utility>
+
+Vampire::Vampire(std::shared_ptr<Vector> position) {
+
+}
