@@ -11,7 +11,7 @@
 
 class Vampire : public Humanoid {
 public:
-   Vampire(std::shared_ptr<Vector> position);
+   Vampire(Vector position);
 
 };
 

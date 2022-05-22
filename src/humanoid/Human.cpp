@@ -8,6 +8,6 @@
 
 using namespace std;
 
-Human::Human(shared_ptr<Vector> position) : Humanoid(move(position)) {
+Human::Human(Vector position) : Humanoid(position) {
 
 }

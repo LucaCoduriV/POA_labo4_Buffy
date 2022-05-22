@@ -18,7 +18,8 @@ public:
    std::size_t nextTurn();
 
    template <typename otherClass>
-   std::weak_ptr<Humanoid> findNearestHuman(std::shared_ptr<Humanoid> human) const;
+   std::weak_ptr<Humanoid> findNearestHuman(std::shared_ptr<Humanoid> humanoid)
+   const;
 
 private:
    size_t turn;

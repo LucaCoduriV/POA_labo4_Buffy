@@ -8,11 +8,11 @@
 
 using namespace std;
 
-Humanoid::Humanoid(std::shared_ptr<Vector> position) : position(move(position)) {
+Humanoid::Humanoid(Vector position) : position(position) {
 
 }
 
-shared_ptr<Vector> Humanoid::getPosition() const {
+Vector Humanoid::getPosition() const {
    return position;
 }
 
@@ -29,5 +29,9 @@ void Humanoid::setAction(const Field& field) {
 }
 
 void Humanoid::executeAction(const Field& field) {
+
+}
+
+Humanoid::~Humanoid() {
 
 }

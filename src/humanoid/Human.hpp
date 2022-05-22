@@ -11,7 +11,7 @@
 
 class Human : public Humanoid {
 public:
-   Human(std::shared_ptr<Vector> position);
+   Human(Vector position);
 
 };
 

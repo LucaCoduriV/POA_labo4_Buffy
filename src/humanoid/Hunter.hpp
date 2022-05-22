@@ -11,7 +11,7 @@
 
 class Hunter : public Humanoid {
 public:
-   Hunter(std::shared_ptr<Vector> position);
+   explicit Hunter(Vector position);
 };
 
 

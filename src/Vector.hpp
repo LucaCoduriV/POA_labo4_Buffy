@@ -10,6 +10,8 @@ class Vector {
 public:
    Vector(int x, int y);
 
+   double distance(const Vector& other) const;
+
 private:
    int x;
    int y;
