@@ -12,6 +12,7 @@
 class Vampire : public Humanoid {
 public:
    Vampire(std::shared_ptr<Vector> position);
+   void display(std::shared_ptr<Displayer> displayer) override;
 
 };
 

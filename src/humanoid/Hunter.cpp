@@ -11,3 +11,7 @@ using namespace std;
 Hunter::Hunter(shared_ptr <Vector> position) : Humanoid(std::move(position)) {
 
 }
+
+void Hunter::display(std::shared_ptr<Displayer> displayer) {
+   displayer->display(*this);
+}

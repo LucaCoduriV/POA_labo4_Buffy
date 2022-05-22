@@ -13,17 +13,18 @@ class Field;
 #include "../ui/console/Displayable.hpp"
 #include <memory>
 
-class Humanoid : Displayable {
+class Humanoid : public Displayable {
 public:
    std::shared_ptr<Vector> getPosition() const;
-
-   void display(std::shared_ptr<Displayer> displayer) override;
 
    bool isAlive() const;
 
    void setAction(const Field& field);
 
    void executeAction(const Field& field);
+
+   void display(std::shared_ptr<Displayer> displayer) override = 0;
+
 
 protected:
    explicit Humanoid(std::shared_ptr<Vector> position);

@@ -10,6 +10,10 @@ class Vector {
 public:
    Vector(int x, int y);
 
+   int getX() const;
+
+   int getY() const;
+
 private:
    int x;
    int y;

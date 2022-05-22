@@ -16,10 +16,6 @@ shared_ptr<Vector> Humanoid::getPosition() const {
    return position;
 }
 
-void Humanoid::display(shared_ptr<Displayer>displayer) {
-
-}
-
 bool Humanoid::isAlive() const {
    return alive;
 }

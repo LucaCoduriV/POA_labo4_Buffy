@@ -12,6 +12,8 @@
 class Hunter : public Humanoid {
 public:
    Hunter(std::shared_ptr<Vector> position);
+   void display(std::shared_ptr<Displayer> displayer) override;
+
 };
 
 

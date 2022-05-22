@@ -11,9 +11,9 @@ class Human;
 
 class Displayer {
 public:
-   virtual void display(std::shared_ptr<Vampire> shared_humanoid) = 0;
-   virtual void display(std::shared_ptr<Hunter> shared_humanoid) = 0;
-   virtual void display(std::shared_ptr<Human> shared_humanoid) = 0;
+   virtual void display(const Vampire& shared_humanoid) = 0;
+   virtual void display(const Hunter& shared_humanoid) = 0;
+   virtual void display(const Human& shared_humanoid) = 0;
    virtual ~Displayer() = default;
 };
 

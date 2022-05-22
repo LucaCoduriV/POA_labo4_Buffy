@@ -8,13 +8,21 @@
 #include "../../humanoid/Vampire.hpp"
 #include "../../humanoid/Hunter.hpp"
 #include "../../humanoid/Human.hpp"
+#include "Grid.hpp"
 
 class DisplayerConsole : public Displayer {
 public:
-   DisplayerConsole();
-   void display(std::shared_ptr<Vampire> shared_humanoid) override;
-   void display(std::shared_ptr<Hunter> shared_humanoid) override;
-   void display(std::shared_ptr<Human> shared_humanoid) override;
+   DisplayerConsole(unsigned height, unsigned width);
+   void display(const Vampire& shared_humanoid) override;
+   void display(const Hunter& shared_humanoid) override;
+   void display(const Human& shared_humanoid) override;
+
+   void show();
+
+   std::string toString();
+
+   Grid grid;
+
 };
 
 

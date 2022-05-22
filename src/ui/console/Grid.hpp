@@ -8,15 +8,25 @@
 
 #include <string>
 #include <memory>
+#include <ostream>
+#include <vector>
+#include "Displayable.hpp"
+#include "../../Vector.hpp"
 
 class Grid {
-public:
-   Grid(int width, int height);
+   friend std::ostream &operator<<(std::ostream &os, const Grid &grid);
 
-   std::string getGrid();
+public:
+
+   Grid(unsigned width, unsigned height);
+   std::string toString();
+   void drawInToBlackboard(const Vector& pos, std::string symbol);
+
 private:
-    int width;
-    int height;
+   unsigned width;
+   unsigned height;
+   std::vector<std::vector<std::string>> blackboard;
+
 };
 
 
