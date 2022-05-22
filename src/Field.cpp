@@ -8,19 +8,23 @@
 #include "humanoid/Human.hpp"
 #include "humanoid/Hunter.hpp"
 #include "humanoid/Vampire.hpp"
+#include "utils/RandomGenerator.hpp"
 
 using namespace std;
 
 Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
 nbVampires) {
 
-   humanoids.push_front(make_shared<Hunter>(Vector(0, 0)));
+   humanoids.push_front(make_shared<Hunter>(Vector(createRandomNb(0, fieldWidth),
+                                                   createRandomNb(0, fieldHeight))));
 
    for (size_t i = 0; i < nbHumans; i++)
-      humanoids.push_front(make_shared<Human>(Vector(0, 0)));
+      humanoids.push_front(make_shared<Human>(Vector(createRandomNb(0, fieldWidth),
+                                                     createRandomNb(0, fieldHeight))));
 
    for (size_t i = 0; i < nbVampires; i++)
-      humanoids.push_front(make_shared<Vampire>(Vector(0, 0)));
+      humanoids.push_front(make_shared<Vampire>(Vector(createRandomNb(0, fieldWidth),
+                                                       createRandomNb(0, fieldHeight))));
 }
 
 std::size_t Field::nextTurn() {

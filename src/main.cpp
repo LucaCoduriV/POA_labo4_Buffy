@@ -1,4 +1,7 @@
 #include <iostream>
+#include "Controller.hpp"
+
+using namespace std;
 
 int main() {
    std::cout << "Hello, World!" << std::endl;
@@ -27,6 +30,8 @@ int main() {
    printf("\033[1;47;35mTexting\033[0m\t\t");
    printf("\t\t");
    printf("\n");
+
+   Controller controller();
 
    return 0;
 }
