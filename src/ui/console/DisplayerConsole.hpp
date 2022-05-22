@@ -4,10 +4,10 @@
 
 #ifndef POA_LABO4_BUFFY_DISPLAYERCONSOLE_H
 #define POA_LABO4_BUFFY_DISPLAYERCONSOLE_H
-#include "Displayer.hpp"
-#include "../humanoid/Vampire.hpp"
-#include "../humanoid/Buffy.hpp"
-#include "../humanoid/Human.hpp"
+#include "../Displayer.hpp"
+#include "../../humanoid/Vampire.hpp"
+#include "../../humanoid/Buffy.hpp"
+#include "../../humanoid/Human.hpp"
 
 class DisplayerConsole : public Displayer {
 public:
