@@ -2,24 +2,29 @@
 // Created by cfont on 19.05.2022.
 //
 
+#include <climits>
 #include "Field.hpp"
 #include "humanoid/Humanoid.hpp"
 #include "humanoid/Human.hpp"
 #include "humanoid/Hunter.hpp"
 #include "humanoid/Vampire.hpp"
+#include "utils/RandomGenerator.hpp"
 
 using namespace std;
 
 Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
 nbVampires) {
 
-   humanoids.push_front(make_shared<Hunter>(make_shared<Vector>(0, 0)));
+   humanoids.push_front(make_shared<Hunter>(Vector(createRandomNb(0, fieldWidth),
+                                                   createRandomNb(0, fieldHeight))));
 
    for (size_t i = 0; i < nbHumans; i++)
-      humanoids.push_front(make_shared<Human>(make_shared<Vector>(0, 0)));
+      humanoids.push_front(make_shared<Human>(Vector(createRandomNb(0, fieldWidth),
+                                                     createRandomNb(0, fieldHeight))));
 
    for (size_t i = 0; i < nbVampires; i++)
-      humanoids.push_front(make_shared<Vampire>(make_shared<Vector>(0, 0)));
+      humanoids.push_front(make_shared<Vampire>(Vector(createRandomNb(0, fieldWidth),
+                                                       createRandomNb(0, fieldHeight))));
 }
 
 std::size_t Field::nextTurn() {
@@ -45,9 +50,22 @@ std::size_t Field::nextTurn() {
    return turn++;
 }
 
-std::shared_ptr<Humanoid> Field::findNearestHuman(std::shared_ptr<Humanoid> human)
+template <typename otherClass>
+std::weak_ptr<Humanoid> Field::findNearestHuman(std::shared_ptr<Humanoid> humanoid)
 const {
-   return nullptr;
+   weak_ptr<Humanoid> nearest;
+   double dist = numeric_limits<double>::max();
+
+   for (shared_ptr<Humanoid> other : humanoids) {
+      if (dynamic_pointer_cast<otherClass>(other)) {
+         double newDist = humanoid->getPosition().distance(other->getPosition());
+         if (newDist < dist) {
+            dist = newDist;
+            nearest = humanoid;
+         }
+      }
+   }
+   return nearest;
 }
 
 

@@ -15,7 +15,7 @@ class Field;
 
 class Humanoid : public Displayable {
 public:
-   std::shared_ptr<Vector> getPosition() const;
+   Vector getPosition() const;
 
    bool isAlive() const;
 
@@ -23,14 +23,13 @@ public:
 
    void executeAction(const Field& field);
 
+   virtual ~Humanoid();
    void display(std::shared_ptr<Displayer> displayer) override = 0;
-
-
 protected:
-   explicit Humanoid(std::shared_ptr<Vector> position);
+   explicit Humanoid(Vector position);
 
 private:
-   std::shared_ptr<Vector> position;
+   Vector position;
    std::shared_ptr<Action> action;
 
    bool alive;

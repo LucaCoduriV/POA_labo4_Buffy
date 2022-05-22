@@ -6,7 +6,7 @@
 
 #include <utility>
 
-Vampire::Vampire(std::shared_ptr<Vector> position) : Humanoid(std::move(position)) {
+Vampire::Vampire(Vector position) : Humanoid(position) {
 
 }
 

@@ -3,3 +3,6 @@
 //
 
 #include "Controller.hpp"
+
+Controller::Controller() : field(20, 20, 3, 3){
+}

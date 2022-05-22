@@ -16,7 +16,10 @@ public:
    Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans, size_t
    nbVampires);
    std::size_t nextTurn();
-   std::shared_ptr<Humanoid> findNearestHuman(std::shared_ptr<Humanoid> human) const;
+
+   template <typename otherClass>
+   std::weak_ptr<Humanoid> findNearestHuman(std::shared_ptr<Humanoid> humanoid)
+   const;
 
 private:
    size_t turn;

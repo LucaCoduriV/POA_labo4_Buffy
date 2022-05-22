@@ -10,15 +10,15 @@ DisplayerConsole::DisplayerConsole(unsigned height, unsigned width):grid(height,
                                                                          width) {}
 
 void DisplayerConsole::display(const Vampire& shared_humanoid) {
-   grid.drawInToBlackboard(*shared_humanoid.getPosition(), "V");
+   grid.drawInToBlackboard(shared_humanoid.getPosition(), "V");
 }
 
 void DisplayerConsole::display(const Hunter& shared_humanoid) {
-   grid.drawInToBlackboard(*shared_humanoid.getPosition(), "B");
+   grid.drawInToBlackboard(shared_humanoid.getPosition(), "B");
 }
 
 void DisplayerConsole::display(const Human& shared_humanoid) {
-   grid.drawInToBlackboard(*shared_humanoid.getPosition(), "H");
+   grid.drawInToBlackboard(shared_humanoid.getPosition(), "H");
 }
 
 void DisplayerConsole::show() {

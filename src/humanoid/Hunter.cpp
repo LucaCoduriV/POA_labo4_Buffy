@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Hunter::Hunter(shared_ptr <Vector> position) : Humanoid(std::move(position)) {
+Hunter::Hunter(Vector position) : Humanoid(position) {
 
 }
 

@@ -11,13 +11,9 @@ using namespace std;
 TEST_CASE( "Should show a Vampire" ) {
    vector<shared_ptr<Humanoid>> displayables = vector<shared_ptr<Humanoid>>();
 
-   shared_ptr<Vector> position = make_shared<Vector>(0, 0);
-   shared_ptr<Vector> position1 = make_shared<Vector>(1, 3);
-   shared_ptr<Vector> position2 = make_shared<Vector>(4, 2);
-
-   displayables.push_back(make_shared<Vampire>(position));
-   displayables.push_back(make_shared<Human>(position1));
-   displayables.push_back(make_shared<Hunter>(position2));
+   displayables.push_back(make_shared<Vampire>(Vector(0,0)));
+   displayables.push_back(make_shared<Human>(Vector(5,9)));
+   displayables.push_back(make_shared<Hunter>(Vector(3,4)));
 
    shared_ptr<DisplayerConsole> consoleDisplayer = make_shared<DisplayerConsole>
       (10,10);
