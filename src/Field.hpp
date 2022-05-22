@@ -4,9 +4,7 @@
 
 #ifndef POA_LABO4_BUFFY_FIELD_HPP
 #define POA_LABO4_BUFFY_FIELD_HPP
-class Displayer;
 class Humanoid;
-
 #include <iostream>
 #include <memory>
 #include <list>
@@ -15,8 +13,10 @@ class Humanoid;
 
 class Field {
 public:
+   Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans, size_t
+   nbVampires);
    std::size_t nextTurn();
-   std::shared_ptr<Human> findNearestHuman(std::shared_ptr<Human> human) const;
+   std::shared_ptr<Humanoid> findNearestHuman(std::shared_ptr<Humanoid> human) const;
 
 private:
    size_t turn;

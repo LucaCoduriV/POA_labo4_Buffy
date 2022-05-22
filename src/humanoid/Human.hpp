@@ -5,10 +5,13 @@
 #ifndef POA_LABO4_BUFFY_HUMAN_HPP
 #define POA_LABO4_BUFFY_HUMAN_HPP
 
-
+#include <memory>
 #include "Humanoid.hpp"
+#include "../Vector.hpp"
 
-class Human : Humanoid{
+class Human : public Humanoid {
+public:
+   Human(std::shared_ptr<Vector> position);
 
 };
 

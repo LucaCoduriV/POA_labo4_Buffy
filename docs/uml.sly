@@ -453,7 +453,7 @@
       <line>
         <point>
           <x>441</x>
-          <y>231</y>
+          <y>221</y>
         </point>
         <point>
           <x>441</x>
@@ -469,12 +469,12 @@
         </point>
         <point>
           <x>421</x>
-          <y>286</y>
+          <y>276</y>
         </point>
       </line>
       <labelAssociation>
         <x>410</x>
-        <y>323</y>
+        <y>318</y>
         <w>0</w>
         <h>16</h>
       </labelAssociation>
@@ -486,7 +486,7 @@
       </roleAssociation>
       <roleAssociation>
         <x>425</x>
-        <y>290</y>
+        <y>280</y>
         <w>0</w>
         <h>16</h>
       </roleAssociation>
@@ -498,7 +498,7 @@
       </multipliciteAssociation>
       <multipliciteAssociation>
         <x>407</x>
-        <y>290</y>
+        <y>280</y>
         <w>8</w>
         <h>16</h>
       </multipliciteAssociation>
@@ -636,7 +636,7 @@
     <componentView color="-2079" componentID="100701" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>360</x>
-        <y>230</y>
+        <y>220</y>
         <w>150</w>
         <h>55</h>
       </geometry>

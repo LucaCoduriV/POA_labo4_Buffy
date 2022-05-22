@@ -12,7 +12,7 @@ void DisplayerConsole::display(std::shared_ptr<Vampire> shared_humanoid) {
    cout << "V" << endl;
 }
 
-void DisplayerConsole::display(std::shared_ptr<Buffy> shared_humanoid) {
+void DisplayerConsole::display(std::shared_ptr<Hunter> shared_humanoid) {
    cout << "B" << endl;
 }
 
