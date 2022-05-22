@@ -4,19 +4,22 @@
 
 #include "Field.hpp"
 #include "humanoid/Humanoid.hpp"
+#include "humanoid/Human.hpp"
+#include "humanoid/Hunter.hpp"
+#include "humanoid/Vampire.hpp"
 
 using namespace std;
 
 Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
 nbVampires) {
 
-   //humanoids.push_front(make_shared<Hunter>(make_shared<Vector>(0, 0)));
+   humanoids.push_front(make_shared<Hunter>(make_shared<Vector>(0, 0)));
 
    for (size_t i = 0; i < nbHumans; i++)
       humanoids.push_front(make_shared<Human>(make_shared<Vector>(0, 0)));
 
-   //for (size_t i = 0; i < nbVampires; i++)
-      //humanoids.push_front(make_shared<Vampire>(make_shared<Vector>(0, 0)));
+   for (size_t i = 0; i < nbVampires; i++)
+      humanoids.push_front(make_shared<Vampire>(make_shared<Vector>(0, 0)));
 }
 
 std::size_t Field::nextTurn() {

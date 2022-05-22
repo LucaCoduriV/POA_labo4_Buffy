@@ -9,7 +9,7 @@
 #include "Humanoid.hpp"
 #include "../Vector.hpp"
 
-class Vampire {
+class Vampire : public Humanoid {
 public:
    Vampire(std::shared_ptr<Vector> position);
 
