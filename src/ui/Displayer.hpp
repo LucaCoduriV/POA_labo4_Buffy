@@ -7,9 +7,6 @@
 class Vampire;
 class Buffy;
 class Human;
-#include "../humanoid/Vampire.hpp"
-#include "../humanoid/Buffy.hpp"
-#include "../humanoid/Human.hpp"
 #include <memory>
 
 class Displayer {

@@ -8,7 +8,7 @@
 
 #include "Humanoid.hpp"
 
-class Buffy {
+class Buffy : Humanoid{
 
 };
 

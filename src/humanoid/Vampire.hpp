@@ -8,7 +8,7 @@
 
 #include "Humanoid.hpp"
 
-class Vampire {
+class Vampire : Humanoid {
 
 };
 
