@@ -8,6 +8,6 @@
 
 using namespace std;
 
-Hunter::Hunter(shared_ptr <Vector> position) {
+Hunter::Hunter(shared_ptr <Vector> position) : Humanoid(std::move(position)) {
 
 }
