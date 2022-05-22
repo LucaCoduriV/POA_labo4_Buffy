@@ -11,13 +11,14 @@ class Field;
 #include "../Vector.hpp"
 #include "../action/Action.hpp"
 #include "../Field.hpp"
+#include "../ui/console/Displayable.hpp"
 #include <memory>
 
-class Humanoid {
+class Humanoid : Displayable {
 public:
    std::shared_ptr<Vector> getPosition() const;
 
-   void display(std::shared_ptr<Displayer> displayer);
+   void display(std::shared_ptr<Displayer> displayer) override;
 
    bool isAlive() const;
 
