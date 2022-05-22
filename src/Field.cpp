@@ -45,9 +45,12 @@ std::size_t Field::nextTurn() {
    return turn++;
 }
 
-std::shared_ptr<Humanoid> Field::findNearestHuman(std::shared_ptr<Humanoid> human)
+template <typename otherClass>
+std::weak_ptr<Humanoid> Field::findNearestHuman(std::shared_ptr<Humanoid> human)
 const {
-   return nullptr;
+   weak_ptr<Humanoid> nearest;
+   for (shared_ptr<Humanoid> humanoid : humanoids)
+   return nearest;
 }
 
 

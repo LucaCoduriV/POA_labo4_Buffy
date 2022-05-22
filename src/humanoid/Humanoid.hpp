@@ -25,6 +25,8 @@ public:
 
    void executeAction(const Field& field);
 
+   virtual ~Humanoid() = 0;
+
 protected:
    explicit Humanoid(std::shared_ptr<Vector> position);
 
