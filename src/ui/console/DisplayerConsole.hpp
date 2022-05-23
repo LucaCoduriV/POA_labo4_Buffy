@@ -23,12 +23,18 @@ public:
 
    std::string toString();
 
-   Grid grid;
+
+protected:
+   virtual std::string getVampireChar();
+   virtual std::string getHunterChar();
+   virtual std::string getHumanChar();
+
 private:
-   static const std::string RED;
-   static const std::string BLUE;
-   static const std::string YELLOW;
-   static const std::string NC;
+   Grid grid;
+
+   static const char HUMAN_CHAR = 'H';
+   static const char VAMPIRE_CHAR = 'V';
+   static const char HUNTER_CHAR = 'B';
 
 };
 

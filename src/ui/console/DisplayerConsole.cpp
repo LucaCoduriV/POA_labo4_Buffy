@@ -10,15 +10,15 @@ DisplayerConsole::DisplayerConsole(unsigned height, unsigned width):grid(width,
                                                                          height) {}
 
 void DisplayerConsole::display(const Vampire& shared_humanoid) {
-   grid.drawInToBlackboard(shared_humanoid.getPosition(), RED + "V" + NC);
+   grid.drawInToBlackboard(shared_humanoid.getPosition(), getVampireChar());
 }
 
 void DisplayerConsole::display(const Hunter& shared_humanoid) {
-   grid.drawInToBlackboard(shared_humanoid.getPosition(), YELLOW + "B" + NC);
+   grid.drawInToBlackboard(shared_humanoid.getPosition(), getHunterChar());
 }
 
 void DisplayerConsole::display(const Human& shared_humanoid) {
-   grid.drawInToBlackboard(shared_humanoid.getPosition(), BLUE + "H" + NC);
+   grid.drawInToBlackboard(shared_humanoid.getPosition(), getHumanChar());
 }
 
 void DisplayerConsole::show() {
@@ -29,9 +29,16 @@ std::string DisplayerConsole::toString() {
    return grid.toString();
 }
 
-const string DisplayerConsole::RED = "\x1B[31m";
-const string DisplayerConsole::BLUE = "\x1B[34m";
-const string DisplayerConsole::YELLOW = "\x1B[93m";
-const string DisplayerConsole::NC = "\033[0m";
+std::string DisplayerConsole::getHunterChar() {
+   return {HUNTER_CHAR};
+}
+
+std::string DisplayerConsole::getVampireChar() {
+   return {VAMPIRE_CHAR};
+}
+
+std::string DisplayerConsole::getHumanChar() {
+   return {HUMAN_CHAR};
+}
 
 
