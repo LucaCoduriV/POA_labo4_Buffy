@@ -6,9 +6,9 @@
 #define POA_LABO4_BUFFY_COLOREDCONSOLEDISPLAYER_HPP
 
 
-#include "DisplayerConsole.hpp"
+#include "ConsoleDisplayer.hpp"
 
-class ColoredConsoleDisplayer : public DisplayerConsole{
+class ColoredConsoleDisplayer : public ConsoleDisplayer{
 public:
    ColoredConsoleDisplayer(unsigned height, unsigned width);
    std::string getHumanChar() override;
@@ -16,10 +16,10 @@ public:
    std::string getVampireChar() override;
 
 private:
-   static const std::string RED;
-   static const std::string BLUE;
-   static const std::string YELLOW;
-   static const std::string NC;
+   static const char* RED;
+   static const char* BLUE;
+   static const char* YELLOW;
+   static const char* NC;
 };
 
 

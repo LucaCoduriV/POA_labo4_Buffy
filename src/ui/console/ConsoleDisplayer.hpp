@@ -12,9 +12,9 @@
 
 
 
-class DisplayerConsole : public Displayer {
+class ConsoleDisplayer : public Displayer {
 public:
-   DisplayerConsole(unsigned height, unsigned width);
+   ConsoleDisplayer(unsigned height, unsigned width);
    void display(const Vampire& shared_humanoid) override;
    void display(const Hunter& shared_humanoid) override;
    void display(const Human& shared_humanoid) override;

@@ -8,25 +8,25 @@ using namespace std;
 
 
 
-const string ColoredConsoleDisplayer::RED = "\x1B[31m";
-const string ColoredConsoleDisplayer::BLUE = "\x1B[34m";
-const string ColoredConsoleDisplayer::YELLOW = "\x1B[93m";
-const string ColoredConsoleDisplayer::NC = "\033[0m";
+const char* ColoredConsoleDisplayer::RED = "\x1B[31m";
+const char* ColoredConsoleDisplayer::BLUE = "\x1B[34m";
+const char* ColoredConsoleDisplayer::YELLOW = "\x1B[93m";
+const char* ColoredConsoleDisplayer::NC = "\033[0m";
 
 ColoredConsoleDisplayer::ColoredConsoleDisplayer(unsigned int height,
                                                  unsigned int width)
-   : DisplayerConsole(height, width) {
+   : ConsoleDisplayer(height, width) {
 
 }
 
 std::string ColoredConsoleDisplayer::getHumanChar() {
-   return BLUE + DisplayerConsole::getHumanChar() + NC;
+   return BLUE + ConsoleDisplayer::getHumanChar() + NC;
 }
 
 std::string ColoredConsoleDisplayer::getHunterChar() {
-   return YELLOW + DisplayerConsole::getHunterChar() + NC;
+   return YELLOW + ConsoleDisplayer::getHunterChar() + NC;
 }
 
 std::string ColoredConsoleDisplayer::getVampireChar() {
-   return RED + DisplayerConsole::getVampireChar() + NC;
+   return RED + ConsoleDisplayer::getVampireChar() + NC;
 }
