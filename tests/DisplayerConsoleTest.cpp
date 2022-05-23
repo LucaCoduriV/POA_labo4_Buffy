@@ -8,7 +8,7 @@
 
 using namespace std;
 
-TEST_CASE( "Should show a Vampire" ) {
+TEST_CASE( "Should show a grid with humanoids" ) {
    vector<shared_ptr<Humanoid>> displayables = vector<shared_ptr<Humanoid>>();
 
    displayables.push_back(make_shared<Vampire>(Vector(0,0)));

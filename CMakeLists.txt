@@ -12,7 +12,7 @@ src/action/Vampirize.cpp src/action/Vampirize.hpp src/action/Move.cpp
 src/action/Move.hpp src/Vector.hpp src/Vector.cpp src/Controller.hpp src/Controller.cpp
         src/ui/Displayer.hpp src/ui/console/DisplayerConsole.hpp
         src/ui/console/DisplayerConsole.cpp src/ui/console/Grid.cpp
-        src/ui/console/Grid.hpp src/ui/console/Displayable.hpp src/utils/RandomGenerator.hpp src/utils/RandomGenerator.cpp libs/color.hpp)
+        src/ui/console/Grid.hpp src/ui/console/Displayable.hpp src/utils/RandomGenerator.hpp src/utils/RandomGenerator.cpp)
 
 add_executable(POA_labo4_Buffy src/main.cpp ${SOURCE})
 add_executable(Tests tests/catch.hpp tests/test.cpp ${SOURCE} tests/GridTest.cpp tests/DisplayerConsoleTest.cpp)

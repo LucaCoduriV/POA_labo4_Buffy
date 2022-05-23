@@ -10,6 +10,8 @@
 #include "../../humanoid/Human.hpp"
 #include "Grid.hpp"
 
+
+
 class DisplayerConsole : public Displayer {
 public:
    DisplayerConsole(unsigned height, unsigned width);
@@ -22,6 +24,11 @@ public:
    std::string toString();
 
    Grid grid;
+private:
+   static const std::string RED;
+   static const std::string BLUE;
+   static const std::string YELLOW;
+   static const std::string NC;
 
 };
 
