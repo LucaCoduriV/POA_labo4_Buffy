@@ -19,8 +19,9 @@ class Grid {
 public:
 
    Grid(unsigned width, unsigned height);
-   std::string toString();
+   std::string toString() const;
    void drawInToBlackboard(const Vector& pos, std::string symbol);
+   void clearBlackBoard();
 
 private:
    unsigned width;

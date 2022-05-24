@@ -19,9 +19,9 @@ public:
    void display(const Hunter& shared_humanoid) override;
    void display(const Human& shared_humanoid) override;
 
-   void show();
+   void show() const;
 
-   std::string toString();
+   std::string toString() const;
 
 
 protected:

@@ -21,11 +21,11 @@ void ConsoleDisplayer::display(const Human& shared_humanoid) {
    grid.drawInToBlackboard(shared_humanoid.getPosition(), getHumanChar());
 }
 
-void ConsoleDisplayer::show() {
+void ConsoleDisplayer::show() const {
    cout << grid.toString() << endl;
 }
 
-std::string ConsoleDisplayer::toString() {
+std::string ConsoleDisplayer::toString() const {
    return grid.toString();
 }
 
