@@ -6,7 +6,8 @@
 
 using namespace std;
 
-Kill::Kill(weak_ptr<Humanoid> humanoid) : Action(humanoid) {
+Kill::Kill(weak_ptr<Humanoid> humanoid, weak_ptr<Humanoid> other) : Action
+(humanoid), other(other) {
 
 }
 

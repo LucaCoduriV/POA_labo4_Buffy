@@ -68,4 +68,8 @@ const {
    return nearest;
 }
 
+void Field::deleteHumanoid(std::weak_ptr<Humanoid> humanoid) {
+   humanoids.remove(humanoid.lock());
+}
+
 
