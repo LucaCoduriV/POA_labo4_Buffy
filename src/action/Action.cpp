@@ -3,7 +3,6 @@
 //
 
 #include "Action.hpp"
-#include "../humanoid/Humanoid.hpp"
 
 using namespace std;
 
@@ -13,4 +12,8 @@ Action::~Action() {
 
 Action::Action(weak_ptr<Humanoid> humanoid) {
 
+}
+
+std::weak_ptr<Humanoid> Action::getHumanoid() {
+   return humanoid;
 }

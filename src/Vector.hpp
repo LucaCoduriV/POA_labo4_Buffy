@@ -10,6 +10,8 @@ class Vector {
 public:
    Vector(int x, int y);
 
+   Vector& operator=(const Vector& other);
+
    double distance(const Vector& other) const;
 
    int getX() const;

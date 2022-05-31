@@ -31,3 +31,7 @@ void Humanoid::executeAction(const Field& field) {
 Humanoid::~Humanoid() {
 
 }
+
+void Humanoid::setPosition(const Vector &position) {
+   this->position = position;
+}

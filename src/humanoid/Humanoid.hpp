@@ -17,6 +17,8 @@ class Humanoid : public Displayable {
 public:
    Vector getPosition() const;
 
+   void setPosition(const Vector& position);
+
    bool isAlive() const;
 
    void setAction(const Field& field);

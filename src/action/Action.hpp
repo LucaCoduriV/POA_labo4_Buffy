@@ -17,6 +17,8 @@ public:
 protected:
    Action(std::weak_ptr<Humanoid> humanoid);
 
+   std::weak_ptr<Humanoid> getHumanoid();
+
 private:
    std::weak_ptr<Humanoid> humanoid;
 };

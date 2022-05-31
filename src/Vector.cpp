@@ -20,3 +20,8 @@ int Vector::getX() const {
 int Vector::getY() const {
    return y;
 }
+
+Vector& Vector::operator=(const Vector &other) {
+   x = other.x;
+   y = other.y;
+}

@@ -3,6 +3,7 @@
 //
 
 #include "Move.hpp"
+#include "../humanoid/Humanoid.hpp"
 
 #include <utility>
 
@@ -15,5 +16,6 @@ Move::Move(weak_ptr<Humanoid> humanoid, const Vector& direction) : Action
 }
 
 void Move::execute() {
-
+   //TODO peut-être changer direction
+   getHumanoid().lock()->setPosition(direction);
 }
