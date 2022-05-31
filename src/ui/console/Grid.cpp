@@ -17,7 +17,7 @@ Grid::Grid(unsigned width, unsigned height): width(width), height(height) {
 
 
 
-string Grid::toString() {
+string Grid::toString() const {
    string result;
 
    result += "+" + string(width, '-') + "+" + "\n";
@@ -41,4 +41,11 @@ void Grid::drawInToBlackboard(const Vector& pos, string symbol) {
       auto& cell = blackboard[pos.getY()][pos.getX()];
       cell = std::move(symbol);
 
+}
+
+void Grid::clearBlackBoard() {
+   for(vector<string> &row : blackboard) {
+      row.clear();
+      row.resize(width, " ");
+   }
 }
