@@ -9,6 +9,10 @@
 #include "Action.hpp"
 
 class Kill : public Action {
+public:
+   Kill(std::weak_ptr<Humanoid> humanoid);
+
+   void execute() override;
 
 };
 

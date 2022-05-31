@@ -9,7 +9,10 @@
 #include "Action.hpp"
 
 class Vampirize : public Action {
+public:
+   Vampirize(std::weak_ptr<Humanoid> humanoid);
 
+   void execute() override;
 };
 
 

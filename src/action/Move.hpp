@@ -5,11 +5,17 @@
 #ifndef POA_LABO4_BUFFY_MOVE_HPP
 #define POA_LABO4_BUFFY_MOVE_HPP
 
-
+#include "../Vector.hpp"
 #include "Action.hpp"
 
 class Move : public Action {
+public:
+   Move(std::weak_ptr<Humanoid> humanoid, const Vector& direction);
 
+   void execute() override;
+
+private:
+   const Vector& direction;
 };
 
 
