@@ -6,13 +6,14 @@
 #define POA_LABO4_BUFFY_ACTION_HPP
 
 class Humanoid;
+class Field;
 
 #include <memory>
 
 class Action {
 public:
 
-   virtual void execute() = 0;
+   virtual void execute(Field& field) = 0;
    virtual ~Action();
 protected:
    Action(std::weak_ptr<Humanoid> humanoid);

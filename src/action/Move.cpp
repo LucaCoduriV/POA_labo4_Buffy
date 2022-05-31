@@ -15,7 +15,7 @@ Move::Move(weak_ptr<Humanoid> humanoid, const Vector& direction) : Action
 
 }
 
-void Move::execute() {
+void Move::execute(Field& field) {
    //TODO peut-être changer direction
    getHumanoid().lock()->setPosition(direction);
 }

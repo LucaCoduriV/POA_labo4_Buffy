@@ -3,14 +3,17 @@
 //
 
 #include "Kill.hpp"
+#include "../Field.hpp"
+
+#include <utility>
 
 using namespace std;
 
-Kill::Kill(weak_ptr<Humanoid> humanoid, weak_ptr<Humanoid> other) : Action
-(humanoid), other(other) {
+Kill::Kill(weak_ptr<Humanoid> humanoid) : Action
+(std::move(humanoid)) {
 
 }
 
-void Kill::execute() {
-
+void Kill::execute(Field& field) {
+   field.deleteHumanoid(getHumanoid());
 }

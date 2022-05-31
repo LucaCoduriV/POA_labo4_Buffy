@@ -12,7 +12,7 @@ class Move : public Action {
 public:
    Move(std::weak_ptr<Humanoid> humanoid, const Vector& direction);
 
-   void execute() override;
+   void execute(Field& field) override;
 
 private:
    const Vector& direction;

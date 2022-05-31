@@ -10,6 +10,6 @@ Vampirize::Vampirize(weak_ptr<Humanoid> humanoid) : Action(humanoid) {
 
 }
 
-void Vampirize::execute() {
+void Vampirize::execute(Field& field) {
 
 }
