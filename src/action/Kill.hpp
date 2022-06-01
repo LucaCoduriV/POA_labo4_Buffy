@@ -10,7 +10,7 @@
 
 class Kill : public Action {
 public:
-   Kill(std::weak_ptr<Humanoid> humanoid);
+   Kill(Humanoid& humanoid);
 
    void execute(Field& field) override;
 

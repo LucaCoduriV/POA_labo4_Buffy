@@ -32,7 +32,7 @@ int main() {
 //   printf("\t\t");
 //   printf("\n");
 
-   Controller controller(20, 20, 5, 5, make_shared<ColoredConsoleDisplayer>(20, 20));
+   Controller controller(20, 20, 5, 5, new ColoredConsoleDisplayer(20, 20));
 
    return 0;
 }

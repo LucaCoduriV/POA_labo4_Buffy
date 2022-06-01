@@ -14,11 +14,11 @@ Human::Human(Vector position) : Humanoid(position) {
 
 }
 
-void Human::display(std::shared_ptr<Displayer> displayer) {
+void Human::display(Displayer* displayer) {
    displayer->display(*this);
 }
 
 void Human::setAction(const Field &field) {
-   setNextAction(make_shared<Move>(shared_from_this(), Vector(
+   setNextAction(new Move(*this, Vector(
       createRandomNb(-1, 1), createRandomNb(-1, 1))));
 }

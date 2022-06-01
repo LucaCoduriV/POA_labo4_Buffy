@@ -3,6 +3,8 @@
 //
 
 #include "Hunter.hpp"
+#include "../action/Move.hpp"
+#include "../utils/RandomGenerator.hpp"
 
 #include <utility>
 
@@ -12,10 +14,11 @@ Hunter::Hunter(Vector position) : Humanoid(position) {
 
 }
 
-void Hunter::display(std::shared_ptr<Displayer> displayer) {
+void Hunter::display(Displayer* displayer) {
    displayer->display(*this);
 }
 
 void Hunter::setAction(const Field &field) {
-
+   setNextAction(new Move(*this, Vector(
+      createRandomNb(-1, 1), createRandomNb(-1, 1))));
 }

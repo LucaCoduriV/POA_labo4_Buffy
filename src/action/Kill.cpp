@@ -9,11 +9,10 @@
 
 using namespace std;
 
-Kill::Kill(weak_ptr<Humanoid> humanoid) : Action
-(std::move(humanoid)) {
+Kill::Kill(Humanoid& humanoid) : Action(humanoid) {
 
 }
 
 void Kill::execute(Field& field) {
-   field.deleteHumanoid(getHumanoid());
+   getHumanoid().setAlive(false);
 }

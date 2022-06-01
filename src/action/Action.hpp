@@ -16,12 +16,12 @@ public:
    virtual void execute(Field& field) = 0;
    virtual ~Action();
 protected:
-   Action(std::weak_ptr<Humanoid> humanoid);
+   explicit Action(Humanoid& humanoid);
 
-   std::weak_ptr<Humanoid> getHumanoid();
+   Humanoid& getHumanoid();
 
 private:
-   std::weak_ptr<Humanoid> humanoid;
+   Humanoid& humanoid;
 };
 
 

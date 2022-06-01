@@ -11,7 +11,7 @@ class Controller {
    enum class UserInput {NEXT, STAT, QUIT};
 public:
    Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned nbVampires,
-              unsigned nbHumans, std::shared_ptr<Displayer> displayer);
+              unsigned nbHumans, Displayer* displayer);
 
 private:
    void mainLoop();
@@ -20,7 +20,7 @@ private:
 
    Controller::UserInput getUserInputs();
 
-   std::shared_ptr<Displayer> displayer;
+   Displayer* displayer;
    Field field;
 };
 

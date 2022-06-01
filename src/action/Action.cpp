@@ -10,10 +10,10 @@ Action::~Action() {
 
 }
 
-Action::Action(weak_ptr<Humanoid> humanoid) : humanoid(humanoid) {
+Action::Action(Humanoid& humanoid) : humanoid(humanoid) {
 
 }
 
-std::weak_ptr<Humanoid> Action::getHumanoid() {
+Humanoid& Action::getHumanoid() {
    return humanoid;
 }

@@ -9,10 +9,10 @@
 #include "Humanoid.hpp"
 #include "../Vector.hpp"
 
-class Human : public Humanoid, std::enable_shared_from_this<Human> {
+class Human : public Humanoid {
 public:
    Human(Vector position);
-   void display(std::shared_ptr<Displayer> displayer) override;
+   void display(Displayer* displayer) override;
 
    void setAction(const Field &field) override;
 };

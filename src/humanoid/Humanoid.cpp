@@ -33,7 +33,7 @@ void Humanoid::setPosition(const Vector &position) {
    this->position = position;
 }
 
-void Humanoid::setNextAction(std::shared_ptr<Action> action) {
+void Humanoid::setNextAction(Action* action) {
    this->action = action;
 }
 

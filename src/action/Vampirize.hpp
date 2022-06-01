@@ -10,7 +10,7 @@
 
 class Vampirize : public Action {
 public:
-   Vampirize(std::weak_ptr<Humanoid> humanoid);
+   Vampirize(Humanoid& humanoid);
 
    void execute(Field& field) override;
 

@@ -7,7 +7,7 @@
 using namespace std;
 
 Controller::Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned
-nbVampires, unsigned nbHumans, std::shared_ptr<Displayer> displayer) :
+nbVampires, unsigned nbHumans, Displayer* displayer) :
 field(fieldWidth, fieldHeight, nbHumans, nbVampires), displayer(displayer) {
    mainLoop();
 }

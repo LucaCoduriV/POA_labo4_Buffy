@@ -10,6 +10,6 @@ class Displayer;
 
 class Displayable{
 public:
-    virtual void display(std::shared_ptr<Displayer> displayer) = 0;
+    virtual void display(Displayer* displayer) = 0;
 };
 #endif //POA_LABO4_BUFFY_DISPLAYABLE_HPP

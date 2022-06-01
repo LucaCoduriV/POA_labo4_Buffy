@@ -18,19 +18,16 @@ public:
    std::size_t nextTurn();
 
    template <typename otherClass>
-   std::weak_ptr<Humanoid> findNearestHuman(std::shared_ptr<Humanoid> humanoid)
+   Humanoid* findNearestHuman(const Humanoid& humanoid)
    const;
 
-   void deleteHumanoid(std::weak_ptr<Humanoid> humanoid);
+   void addHumanoid(Humanoid* humanoid);
 
-   void addHumanoid(std::shared_ptr<Humanoid> humanoid);
-
-   const std::list<std::shared_ptr<Humanoid>> getHumanoids() const;
+   const std::list<Humanoid*> getHumanoids() const;
 
 private:
    size_t turn;
-   std::shared_ptr<Displayer> displayer;
-   std::list<std::shared_ptr<Humanoid>> humanoids;
+   std::list<Humanoid*> humanoids;
 };
 
 

@@ -26,17 +26,18 @@ public:
    void executeAction(Field& field);
 
    virtual ~Humanoid();
-   void display(std::shared_ptr<Displayer> displayer) override = 0;
+
+   void display(Displayer* displayer) override = 0;
+
+   void setAlive(bool alive);
 protected:
    explicit Humanoid(Vector position);
 
-   void setNextAction(std::shared_ptr<Action> action);
-
-   void setAlive(bool alive);
+   void setNextAction(Action* action);
 
 private:
    Vector position;
-   std::shared_ptr<Action> action;
+   Action* action;
 
    bool alive;
 };
