@@ -8,14 +8,17 @@
 #include "Field.hpp"
 
 class Controller {
+   enum class UserInput {NEXT, STAT, QUIT};
 public:
    Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned nbVampires,
               unsigned nbHumans, std::shared_ptr<Displayer> displayer);
 
+private:
+   void mainLoop();
+
    void displayTurn() const;
 
-private:
-   void getUserInputs();
+   Controller::UserInput getUserInputs();
 
    std::shared_ptr<Displayer> displayer;
    Field field;
