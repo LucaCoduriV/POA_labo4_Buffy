@@ -10,7 +10,7 @@ Action::~Action() {
 
 }
 
-Action::Action(weak_ptr<Humanoid> humanoid) {
+Action::Action(weak_ptr<Humanoid> humanoid) : humanoid(humanoid) {
 
 }
 

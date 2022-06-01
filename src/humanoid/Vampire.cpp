@@ -13,3 +13,7 @@ Vampire::Vampire(Vector position) : Humanoid(position) {
 void Vampire::display(std::shared_ptr<Displayer> displayer) {
    displayer->display(*this);
 }
+
+void Vampire::setAction(const Field &field) {
+
+}

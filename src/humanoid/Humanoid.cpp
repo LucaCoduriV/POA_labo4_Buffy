@@ -20,12 +20,9 @@ bool Humanoid::isAlive() const {
    return alive;
 }
 
-void Humanoid::setAction(const Field& field) {
-
-}
-
-void Humanoid::executeAction(const Field& field) {
-
+void Humanoid::executeAction(Field& field) {
+   if (action)
+      action->execute(field);
 }
 
 Humanoid::~Humanoid() {
@@ -34,4 +31,12 @@ Humanoid::~Humanoid() {
 
 void Humanoid::setPosition(const Vector &position) {
    this->position = position;
+}
+
+void Humanoid::setNextAction(std::shared_ptr<Action> action) {
+   this->action = action;
+}
+
+void Humanoid::setAlive(bool alive) {
+   this->alive = alive;
 }

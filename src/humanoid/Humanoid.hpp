@@ -21,14 +21,18 @@ public:
 
    bool isAlive() const;
 
-   void setAction(const Field& field);
+   virtual void setAction(const Field& field) = 0;
 
-   void executeAction(const Field& field);
+   void executeAction(Field& field);
 
    virtual ~Humanoid();
    void display(std::shared_ptr<Displayer> displayer) override = 0;
 protected:
    explicit Humanoid(Vector position);
+
+   void setNextAction(std::shared_ptr<Action> action);
+
+   void setAlive(bool alive);
 
 private:
    Vector position;

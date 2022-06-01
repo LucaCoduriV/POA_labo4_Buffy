@@ -13,6 +13,8 @@ public:
    Vampirize(std::weak_ptr<Humanoid> humanoid);
 
    void execute(Field& field) override;
+
+
 };
 
 

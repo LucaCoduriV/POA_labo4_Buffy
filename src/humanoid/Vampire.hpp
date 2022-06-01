@@ -14,6 +14,7 @@ public:
    Vampire(Vector position);
    void display(std::shared_ptr<Displayer> displayer) override;
 
+   void setAction(const Field &field) override;
 };
 
 

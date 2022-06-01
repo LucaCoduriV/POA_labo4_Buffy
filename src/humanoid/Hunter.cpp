@@ -15,3 +15,7 @@ Hunter::Hunter(Vector position) : Humanoid(position) {
 void Hunter::display(std::shared_ptr<Displayer> displayer) {
    displayer->display(*this);
 }
+
+void Hunter::setAction(const Field &field) {
+
+}

@@ -5,9 +5,12 @@
 #ifndef POA_LABO4_BUFFY_VECTOR_HPP
 #define POA_LABO4_BUFFY_VECTOR_HPP
 
+#include <iostream>
 
 class Vector {
 public:
+   friend std::ostream& operator<<(std::ostream& os, const Vector& vector);
+
    Vector(int x, int y);
 
    Vector& operator=(const Vector& other);

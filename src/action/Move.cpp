@@ -10,12 +10,13 @@
 using namespace std;
 
 
-Move::Move(weak_ptr<Humanoid> humanoid, const Vector& direction) : Action
+Move::Move(weak_ptr<Humanoid> humanoid, Vector direction) : Action
 (std::move(humanoid)), direction(direction) {
 
 }
 
 void Move::execute(Field& field) {
    //TODO peut-être changer direction
+   cout << getHumanoid().lock()->getPosition();
    getHumanoid().lock()->setPosition(direction);
 }
