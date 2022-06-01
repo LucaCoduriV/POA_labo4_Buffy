@@ -72,4 +72,8 @@ void Field::deleteHumanoid(std::weak_ptr<Humanoid> humanoid) {
    humanoids.remove(humanoid.lock());
 }
 
+void Field::addHumanoid(std::shared_ptr<Humanoid> humanoid) {
+   humanoids.push_front(humanoid);
+}
+
 

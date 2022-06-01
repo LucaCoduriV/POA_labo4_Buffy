@@ -23,6 +23,8 @@ public:
 
    void deleteHumanoid(std::weak_ptr<Humanoid> humanoid);
 
+   void addHumanoid(std::shared_ptr<Humanoid> humanoid);
+
 private:
    size_t turn;
    std::shared_ptr<Displayer> displayer;
