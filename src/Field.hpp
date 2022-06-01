@@ -25,6 +25,8 @@ public:
 
    void addHumanoid(std::shared_ptr<Humanoid> humanoid);
 
+   const std::list<std::shared_ptr<Humanoid>> getHumanoids() const;
+
 private:
    size_t turn;
    std::shared_ptr<Displayer> displayer;

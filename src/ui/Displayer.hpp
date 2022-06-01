@@ -15,6 +15,7 @@ public:
    virtual void display(const Hunter& shared_humanoid) = 0;
    virtual void display(const Human& shared_humanoid) = 0;
    virtual ~Displayer() = default;
+   virtual void show() const = 0;
 };
 
 

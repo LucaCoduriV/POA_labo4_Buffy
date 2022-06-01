@@ -9,9 +9,15 @@
 
 class Controller {
 public:
-   Controller();
+   Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned nbVampires,
+              unsigned nbHumans, std::shared_ptr<Displayer> displayer);
+
+   void displayTurn() const;
 
 private:
+   void getUserInputs();
+
+   std::shared_ptr<Displayer> displayer;
    Field field;
 };
 
