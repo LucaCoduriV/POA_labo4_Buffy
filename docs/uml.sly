@@ -199,7 +199,7 @@
     </entity>
     <entity entityType="CLASS" id="100048" isAbstract="false" name="Field" visibility="PUBLIC">
       <attribute const="false" defaultValue="" isStatic="false" name="turn" type="size_t" visibility="PRIVATE"/>
-      <method isAbstract="false" isStatic="false" name="findNearestHuman" returnType="Human*" view="DEFAULT" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="findNearestHumanoid" returnType="Human*" view="DEFAULT" visibility="PUBLIC">
         <variable const="false" name="human" type="Human*"/>
       </method>
       <method isAbstract="false" isStatic="false" name="nextTurn" returnType="int" view="DEFAULT" visibility="PUBLIC"/>

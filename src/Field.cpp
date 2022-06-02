@@ -51,7 +51,7 @@ std::size_t Field::nextTurn() {
 }
 
 template<typename otherClass>
-Humanoid* Field::findNearestHuman(const Humanoid& humanoid)
+Humanoid* Field::findNearestHumanoid(const Humanoid& humanoid)
 const {
    Humanoid* nearest;
    double dist = numeric_limits<double>::max();

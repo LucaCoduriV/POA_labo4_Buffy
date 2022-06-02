@@ -18,7 +18,7 @@ public:
    std::size_t nextTurn();
 
    template <typename otherClass>
-   Humanoid* findNearestHuman(const Humanoid& humanoid)
+   Humanoid* findNearestHumanoid(const Humanoid& humanoid)
    const;
 
    void addHumanoid(Humanoid* humanoid);

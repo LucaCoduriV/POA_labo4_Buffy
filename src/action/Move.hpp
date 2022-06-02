@@ -12,7 +12,9 @@ class Move : public Action {
 public:
    Move(Humanoid& humanoid);
 
-   void execute(Field& field) override;
+   Move(Humanoid& humanoid, Humanoid& toFollow);
+
+   virtual void execute(Field& field) override;
 
 private:
    const int MAX_MOVE;
