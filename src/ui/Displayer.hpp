@@ -16,6 +16,7 @@ public:
    virtual void display(const Human& shared_humanoid) = 0;
    virtual ~Displayer() = default;
    virtual void show() const = 0;
+   virtual void clear() = 0;
 };
 
 

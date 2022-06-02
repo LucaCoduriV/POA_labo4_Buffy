@@ -41,4 +41,8 @@ std::string ConsoleDisplayer::getHumanChar() {
    return {HUMAN_CHAR};
 }
 
+void ConsoleDisplayer::clear() {
+   grid.clearBlackBoard();
+}
+
 

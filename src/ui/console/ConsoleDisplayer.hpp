@@ -20,6 +20,7 @@ public:
    void display(const Human& shared_humanoid) override;
 
    void show() const;
+   void clear() override;
 
    std::string toString() const;
 
