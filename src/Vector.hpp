@@ -19,6 +19,8 @@ public:
 
    double distance(const Vector& other) const;
 
+   Vector direction(const Vector& to) const;
+
    int getX() const;
 
    int getY() const;

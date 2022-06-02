@@ -15,14 +15,8 @@ void Follow::execute(Field &field) {
 
    //TODO possible d'utiliser les constantes de Move?
    if (toFollow) {
-      Vector newPosition = Vector(
-         toFollow->getPosition().getX() - hunter->getPosition().getX() / abs(
-            toFollow->getPosition().getX() - hunter->getPosition().getX()),
-         toFollow->getPosition().getY() - hunter->getPosition().getY() / abs(
-            toFollow->getPosition().getY() - hunter->getPosition().getY())
-      );
-
-      hunter->setPosition(newPosition);
+      hunter->setPosition(hunter->getPosition() +
+         hunter->getPosition().direction(toFollow->getPosition()));
    }
 }
 
