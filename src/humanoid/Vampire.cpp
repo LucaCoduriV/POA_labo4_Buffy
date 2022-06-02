@@ -8,7 +8,7 @@
 
 #include <utility>
 
-Vampire::Vampire(Vector position) : Humanoid(position) {
+Vampire::Vampire(Vector position) : Hunter(position) {
 
 }
 
