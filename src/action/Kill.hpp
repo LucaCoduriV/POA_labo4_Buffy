@@ -10,7 +10,7 @@
 
 class Kill : public Action {
 public:
-   Kill(Humanoid& humanoid);
+   Kill(Humanoid* humanoid);
 
    void execute(Field& field) override;
 

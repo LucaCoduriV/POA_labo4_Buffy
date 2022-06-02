@@ -5,6 +5,7 @@
 #include "Human.hpp"
 #include "../action/Move.hpp"
 #include "../utils/RandomGenerator.hpp"
+#include "../ui/Displayer.hpp"
 
 #include <utility>
 
@@ -19,5 +20,5 @@ void Human::display(Displayer* displayer) {
 }
 
 void Human::setAction(const Field &field) {
-   setNextAction(new Move(*this));
+   setNextAction(new Move(this));
 }

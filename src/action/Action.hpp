@@ -16,12 +16,12 @@ public:
    virtual void execute(Field& field) = 0;
    virtual ~Action();
 protected:
-   explicit Action(Humanoid& humanoid);
+   explicit Action(Humanoid* humanoid);
 
-   Humanoid& getHumanoid();
+   Humanoid* getHumanoid();
 
 private:
-   Humanoid& humanoid;
+   Humanoid* humanoid;
 };
 
 

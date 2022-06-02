@@ -6,10 +6,9 @@
 #define POA_LABO4_BUFFY_HUMANOID_HPP
 class Displayer;
 class Field;
-#include "../ui/Displayer.hpp"
+
 #include "../Vector.hpp"
 #include "../action/Action.hpp"
-#include "../Field.hpp"
 #include "../ui/console/Displayable.hpp"
 #include <memory>
 

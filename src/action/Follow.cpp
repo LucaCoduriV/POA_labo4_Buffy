@@ -5,13 +5,25 @@
 #include "Follow.hpp"
 #include "../humanoid/Hunter.hpp"
 
-Follow::Follow(Humanoid &humanoid) : Move(humanoid) {
+Follow::Follow(Hunter* humanoid) : Move(humanoid) {
 
 }
 
 void Follow::execute(Field &field) {
-   //field.findNearestHumanoid<Human*>(getHumanoid());
-   Move::execute(field);
+   Hunter* hunter = (Hunter*) getHumanoid();
+   Humanoid* toFollow = hunter->getNearerEnemy(field);
+
+   //TODO possible d'utiliser les constantes de Move?
+   if (toFollow) {
+      Vector newPosition = Vector(
+         toFollow->getPosition().getX() - hunter->getPosition().getX() / abs(
+            toFollow->getPosition().getX() - hunter->getPosition().getX()),
+         toFollow->getPosition().getY() - hunter->getPosition().getY() / abs(
+            toFollow->getPosition().getY() - hunter->getPosition().getY())
+      );
+
+      hunter->setPosition(newPosition);
+   }
 }
 
 

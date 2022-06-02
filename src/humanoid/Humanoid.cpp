@@ -3,6 +3,7 @@
 //
 
 #include "Humanoid.hpp"
+#include "../ui/Displayer.hpp"
 
 #include <utility>
 

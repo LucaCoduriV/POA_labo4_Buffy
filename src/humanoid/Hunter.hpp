@@ -15,6 +15,8 @@ public:
    void display(Displayer* displayer) override;
 
    void setAction(const Field &field) override;
+
+   virtual Humanoid* getNearerEnemy(const Field& field) const;
 };
 
 

@@ -10,7 +10,7 @@
 
 class Vampirize : public Action {
 public:
-   Vampirize(Humanoid& humanoid);
+   Vampirize(Humanoid* humanoid);
 
    void execute(Field& field) override;
 

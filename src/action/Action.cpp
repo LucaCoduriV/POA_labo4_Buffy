@@ -10,10 +10,10 @@ Action::~Action() {
 
 }
 
-Action::Action(Humanoid& humanoid) : humanoid(humanoid) {
+Action::Action(Humanoid* humanoid) : humanoid(humanoid) {
 
 }
 
-Humanoid& Action::getHumanoid() {
+Humanoid* Action::getHumanoid() {
    return humanoid;
 }

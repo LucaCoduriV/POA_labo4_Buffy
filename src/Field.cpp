@@ -2,7 +2,6 @@
 // Created by cfont on 19.05.2022.
 //
 
-#include <climits>
 #include "Field.hpp"
 #include "humanoid/Humanoid.hpp"
 #include "humanoid/Human.hpp"
@@ -50,23 +49,7 @@ std::size_t Field::nextTurn() {
    return turn++;
 }
 
-template<typename otherClass>
-Humanoid* Field::findNearestHumanoid(const Humanoid& humanoid)
-const {
-   Humanoid* nearest;
-   double dist = numeric_limits<double>::max();
 
-   for (Humanoid* other: humanoids) {
-      if (dynamic_pointer_cast<otherClass>(other)) {
-         double newDist = humanoid.getPosition().distance(other->getPosition());
-         if (newDist < dist) {
-            dist = newDist;
-            nearest = other;
-         }
-      }
-   }
-   return nearest;
-}
 
 void Field::addHumanoid(Humanoid* humanoid) {
    humanoids.push_front(humanoid);

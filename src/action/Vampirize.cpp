@@ -4,15 +4,15 @@
 
 #include "Vampirize.hpp"
 #include "../humanoid/Vampire.hpp"
-#include "../humanoid/Humanoid.hpp"
+#include "../Field.hpp"
 
 using namespace std;
 
-Vampirize::Vampirize(Humanoid& humanoid) : Action(humanoid) {
+Vampirize::Vampirize(Humanoid* humanoid) : Action(humanoid) {
 
 }
 
 void Vampirize::execute(Field& field) {
-   field.addHumanoid(new Vampire(getHumanoid().getPosition()));
-   getHumanoid().setAlive(false);
+   field.addHumanoid(new Vampire(getHumanoid()->getPosition()));
+   getHumanoid()->setAlive(false);
 }

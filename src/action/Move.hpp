@@ -10,9 +10,7 @@
 
 class Move : public Action {
 public:
-   Move(Humanoid& humanoid);
-
-   Move(Humanoid& humanoid, Humanoid& toFollow);
+   Move(Humanoid* humanoid);
 
    virtual void execute(Field& field) override;
 

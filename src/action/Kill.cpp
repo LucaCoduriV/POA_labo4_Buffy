@@ -9,10 +9,10 @@
 
 using namespace std;
 
-Kill::Kill(Humanoid& humanoid) : Action(humanoid) {
+Kill::Kill(Humanoid* humanoid) : Action(humanoid) {
 
 }
 
 void Kill::execute(Field& field) {
-   getHumanoid().setAlive(false);
+   getHumanoid()->setAlive(false);
 }
