@@ -17,6 +17,5 @@ void Vampire::display(Displayer* displayer) {
 }
 
 void Vampire::setAction(const Field &field) {
-   setNextAction(new Move(*this, Vector(
-      createRandomNb(-1, 1), createRandomNb(-1, 1))));
+   setNextAction(new Move(*this, Vector(0, 1)));
 }

@@ -11,6 +11,8 @@ class Vector {
 public:
    friend std::ostream& operator<<(std::ostream& os, const Vector& vector);
 
+   friend Vector operator+(const Vector& v1, const Vector& v2);
+
    Vector(int x, int y);
 
    Vector& operator=(const Vector& other);

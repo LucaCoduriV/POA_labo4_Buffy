@@ -26,4 +26,8 @@ std::ostream &operator<<(std::ostream &os, const Vector &vector) {
    return os;
 }
 
+Vector operator+(const Vector& v1, const Vector& v2) {
+   return Vector(v1.x + v2.x, v1.y + v2.y);
+}
+
 Vector& Vector::operator=(const Vector &other) = default;

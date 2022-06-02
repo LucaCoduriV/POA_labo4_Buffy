@@ -17,5 +17,5 @@ direction(direction) {
 
 void Move::execute(Field& field) {
    //TODO peut-être changer direction
-   getHumanoid().setPosition(direction);
+   getHumanoid().setPosition(getHumanoid().getPosition() + direction);
 }

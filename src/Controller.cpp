@@ -36,6 +36,8 @@ Controller::UserInput Controller::getUserInputs() {
 }
 
 void Controller::displayTurn() const {
+   displayer->clear();
+
    for(auto& x : field.getHumanoids()) {
       x->display(displayer);
    }
@@ -50,8 +52,8 @@ void Controller::mainLoop() {
    do {
       input = getUserInputs();
       if (input == UserInput::NEXT) {
-         displayTurn();
          field.nextTurn();
+         displayTurn();
       }
    } while (input != UserInput::QUIT);
 }

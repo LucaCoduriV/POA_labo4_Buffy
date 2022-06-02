@@ -38,8 +38,7 @@ ostream &operator<<(ostream &os, const Grid &grid) {
 }
 
 void Grid::drawInToBlackboard(const Vector& pos, string symbol) {
-      auto& cell = blackboard[pos.getY()][pos.getX()];
-      cell = std::move(symbol);
+      blackboard[pos.getY()][pos.getX()] = symbol;
 
 }
 
