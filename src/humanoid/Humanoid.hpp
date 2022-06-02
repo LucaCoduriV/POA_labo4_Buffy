@@ -29,6 +29,9 @@ public:
    void display(Displayer* displayer) override = 0;
 
    void setAlive(bool alive);
+
+   virtual unsigned getSpeed() const = 0;
+
 protected:
    explicit Humanoid(Vector position);
 

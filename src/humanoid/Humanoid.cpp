@@ -9,8 +9,8 @@
 
 using namespace std;
 
-Humanoid::Humanoid(Vector position) : position(position), alive(true), action
-(nullptr) {
+Humanoid::Humanoid(Vector position) : position(position), alive
+(true), action(nullptr){
 
 }
 

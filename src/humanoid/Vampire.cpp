@@ -26,3 +26,7 @@ void Vampire::setAction(const Field &field) {
 Humanoid *Vampire::getNearerEnemy(const Field &field) const {
    return field.findNearestHumanoid<Human>((Humanoid *) this);
 }
+
+unsigned int Vampire::getSpeed() const {
+   return 1;
+}

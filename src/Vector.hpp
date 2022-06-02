@@ -13,6 +13,10 @@ public:
 
    friend Vector operator+(const Vector& v1, const Vector& v2);
 
+   friend Vector operator*(const Vector& v1, int mult);
+
+   friend Vector operator*(int mult, const Vector& v1);
+
    Vector(int x, int y);
 
    Vector();

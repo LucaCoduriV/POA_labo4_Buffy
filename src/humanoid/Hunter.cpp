@@ -27,3 +27,7 @@ void Hunter::setAction(const Field &field) {
 Humanoid* Hunter::getNearerEnemy(const Field &field) const {
    return field.findNearestHumanoid<Vampire>((Humanoid *) this);
 }
+
+unsigned int Hunter::getSpeed() const {
+   return 2;
+}

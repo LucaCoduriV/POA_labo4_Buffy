@@ -55,4 +55,12 @@ void Vector::setCoor(int x, int y) {
    this->y = y;
 }
 
+Vector operator*(const Vector &v1, int mult) {
+   return {v1.x * mult, v1.y * mult};
+}
+
+Vector operator*(int mult, const Vector &v1) {
+   return v1 * mult;
+}
+
 
