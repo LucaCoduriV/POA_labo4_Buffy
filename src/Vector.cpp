@@ -9,6 +9,10 @@ Vector::Vector(int x, int y) : x(x), y(y){
 
 }
 
+Vector::Vector() : Vector(0, 0) {
+
+}
+
 double Vector::distance(const Vector &other) const {
    return sqrt(pow(this->x - other.x, 2) + pow(this->y - other.y, 2));
 }
@@ -45,3 +49,10 @@ Vector Vector::direction(const Vector &to) const {
       diffX == 0 ? 0 : diffX / abs(diffX),
       diffY == 0 ? 0 : diffY / abs(diffY));
 }
+
+void Vector::setCoor(int x, int y) {
+   this->x = x;
+   this->y = y;
+}
+
+

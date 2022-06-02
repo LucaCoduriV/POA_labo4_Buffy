@@ -5,19 +5,17 @@
 #include "Follow.hpp"
 #include "../humanoid/Hunter.hpp"
 
-Follow::Follow(Hunter* humanoid) : Move(humanoid) {
-
-}
-
-void Follow::execute(Field &field) {
+Follow::Follow(Hunter* humanoid, const Field& field) : Move(humanoid, field) {
    Hunter* hunter = (Hunter*) getHumanoid();
    Humanoid* toFollow = hunter->getNearerEnemy(field);
 
-   //TODO possible d'utiliser les constantes de Move?
-   if (toFollow) {
-      hunter->setPosition(hunter->getPosition() +
-         hunter->getPosition().direction(toFollow->getPosition()));
-   }
+   if (toFollow)
+      setNextPosition(hunter->getPosition() +
+                      hunter->getPosition().direction(toFollow->getPosition()));
+}
+
+void Follow::execute(Field &field) {
+   Move::execute(field);
 }
 
 

@@ -34,6 +34,8 @@ protected:
 
    void setNextAction(Action* action);
 
+   Action* getAction() const;
+
 private:
    Vector position;
    Action* action;

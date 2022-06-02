@@ -15,6 +15,8 @@ public:
 
    Vector(int x, int y);
 
+   Vector();
+
    Vector& operator=(const Vector& other);
 
    double distance(const Vector& other) const;
@@ -24,6 +26,8 @@ public:
    int getX() const;
 
    int getY() const;
+
+   void setCoor(int x, int y);
 
 private:
    int x;

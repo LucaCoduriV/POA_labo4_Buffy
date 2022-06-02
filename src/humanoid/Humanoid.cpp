@@ -42,3 +42,7 @@ void Humanoid::setNextAction(Action* action) {
 void Humanoid::setAlive(bool alive) {
    this->alive = alive;
 }
+
+Action *Humanoid::getAction() const {
+   return action;
+}

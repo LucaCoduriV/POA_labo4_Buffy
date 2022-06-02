@@ -20,7 +20,7 @@ void Vampire::display(Displayer* displayer) {
 }
 
 void Vampire::setAction(const Field &field) {
-   setNextAction(new Follow(this));
+   setNextAction(new Follow(this, field));
 }
 
 Humanoid *Vampire::getNearerEnemy(const Field &field) const {

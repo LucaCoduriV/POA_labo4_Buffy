@@ -21,7 +21,7 @@ void Hunter::display(Displayer* displayer) {
 }
 
 void Hunter::setAction(const Field &field) {
-   setNextAction(new Follow(this));
+   setNextAction(new Follow(this, field));
 }
 
 Humanoid* Hunter::getNearerEnemy(const Field &field) const {

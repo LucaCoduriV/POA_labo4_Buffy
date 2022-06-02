@@ -11,7 +11,7 @@ class Hunter;
 
 class Follow : public Move {
 public:
-   explicit Follow(Hunter* humanoid);
+   explicit Follow(Hunter* humanoid, const Field& field);
 
    void execute(Field &field) override;
 };
