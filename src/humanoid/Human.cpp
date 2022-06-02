@@ -19,5 +19,5 @@ void Human::display(Displayer* displayer) {
 }
 
 void Human::setAction(const Field &field) {
-   //setNextAction(new Move(*this, Vector(0, 1)));
+   setNextAction(new Move(*this));
 }

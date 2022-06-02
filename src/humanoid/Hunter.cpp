@@ -19,5 +19,5 @@ void Hunter::display(Displayer* displayer) {
 }
 
 void Hunter::setAction(const Field &field) {
-   //setNextAction(new Move(*this, Vector(0, 1)));
+   setNextAction(new Move(*this));
 }

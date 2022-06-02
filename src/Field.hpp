@@ -25,7 +25,13 @@ public:
 
    const std::list<Humanoid*> getHumanoids() const;
 
+   std::size_t getWidth() const;
+
+   std::size_t getHeight() const;
+
 private:
+   std::size_t width;
+   std::size_t height;
    size_t turn;
    std::list<Humanoid*> humanoids;
 };

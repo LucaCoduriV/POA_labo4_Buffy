@@ -10,12 +10,13 @@
 
 class Move : public Action {
 public:
-   Move(Humanoid& humanoid, Vector direction);
+   Move(Humanoid& humanoid);
 
    void execute(Field& field) override;
 
 private:
-   Vector direction;
+   const int MAX_MOVE;
+   const int MIN_MOVE;
 };
 
 
