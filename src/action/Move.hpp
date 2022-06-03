@@ -12,15 +12,14 @@ class Move : public Action {
 public:
    Move(Humanoid* humanoid, const Field& field);
 
+   Move(Humanoid* humanoid, const Field& field, const Humanoid& toFollow);
+
    virtual void execute(Field& field) override;
 
 protected:
    void setNextPosition(const Vector& position);
 
 private:
-   const int MAX_MOVE;
-   const int MIN_MOVE;
-
    Vector nextPosition;
 };
 

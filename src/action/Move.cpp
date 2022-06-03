@@ -12,16 +12,17 @@
 using namespace std;
 
 
-Move::Move(Humanoid* humanoid, const Field& field) : Action(humanoid), MAX_MOVE(1)
-, MIN_MOVE(-1) {
+Move::Move(Humanoid* humanoid, const Field& field) : Action(humanoid) {
 
    int moveX = createRandomNb(
-      getHumanoid()->getPosition().getX() == 0 ? 0 : MIN_MOVE,
-      getHumanoid()->getPosition().getX() == field.getWidth() - 1 ? 0 : MAX_MOVE);
+      getHumanoid()->getPosition().getX() == 0 ? 0 : -getHumanoid()->getSpeed(),
+      getHumanoid()->getPosition().getX() == field.getWidth() - 1 ? 0 :
+      getHumanoid()->getSpeed());
 
    int moveY = createRandomNb(
-      getHumanoid()->getPosition().getY() == 0 ? 0 : MIN_MOVE,
-      getHumanoid()->getPosition().getY() == field.getWidth() - 1 ? 0 : MAX_MOVE);
+      getHumanoid()->getPosition().getY() == 0 ? 0 : -getHumanoid()->getSpeed(),
+      getHumanoid()->getPosition().getY() == field.getWidth() - 1 ? 0 :
+      getHumanoid()->getSpeed());
 
    nextPosition = Vector(moveX, moveY) + getHumanoid()->getPosition();
 }
@@ -32,4 +33,11 @@ void Move::execute(Field& field) {
 
 void Move::setNextPosition(const Vector& position) {
    nextPosition = position;
+}
+
+Move::Move(Humanoid *humanoid, const Field &field, const Humanoid &toFollow) :
+Action(humanoid) {
+   setNextPosition(getHumanoid()->getPosition() +
+                      (getHumanoid()->getPosition().direction(toFollow.getPosition
+                      ()) * getHumanoid()->getSpeed()));
 }

@@ -3,7 +3,7 @@
 //
 
 #include "Hunter.hpp"
-#include "../action/Follow.hpp"
+#include "../action/Move.hpp"
 #include "../utils/RandomGenerator.hpp"
 #include "../ui/Displayer.hpp"
 #include "../Field.hpp"
@@ -21,13 +21,10 @@ void Hunter::display(Displayer* displayer) {
 }
 
 void Hunter::setAction(const Field &field) {
-   setNextAction(new Follow(this, field));
+   Humanoid* toFollow = field.findNearestHumanoid<Vampire>((Humanoid *) this);
+   setNextAction(new Move(this, field, *toFollow));
 }
 
-Humanoid* Hunter::getNearerEnemy(const Field &field) const {
-   return field.findNearestHumanoid<Vampire>((Humanoid *) this);
-}
-
-unsigned int Hunter::getSpeed() const {
+int Hunter::getSpeed() const {
    return 2;
 }

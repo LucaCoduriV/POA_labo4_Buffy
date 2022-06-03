@@ -23,6 +23,6 @@ void Human::setAction(const Field &field) {
    setNextAction(new Move(this, field));
 }
 
-unsigned int Human::getSpeed() const {
+int Human::getSpeed() const {
    return 1;
 }

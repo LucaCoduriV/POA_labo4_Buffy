@@ -30,7 +30,7 @@ public:
 
    void setAlive(bool alive);
 
-   virtual unsigned getSpeed() const = 0;
+   virtual int getSpeed() const = 0;
 
 protected:
    explicit Humanoid(Vector position);

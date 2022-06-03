@@ -16,9 +16,7 @@ public:
 
    void setAction(const Field &field) override;
 
-   virtual Humanoid* getNearerEnemy(const Field& field) const;
-
-   unsigned int getSpeed() const override;
+   int getSpeed() const override;
 };
 
 

@@ -3,7 +3,7 @@
 //
 
 #include "Vampire.hpp"
-#include "../action/Follow.hpp"
+#include "../action/Move.hpp"
 #include "../utils/RandomGenerator.hpp"
 #include "../ui/Displayer.hpp"
 #include "../Field.hpp"
@@ -20,13 +20,10 @@ void Vampire::display(Displayer* displayer) {
 }
 
 void Vampire::setAction(const Field &field) {
-   setNextAction(new Follow(this, field));
+   Humanoid* toFollow = field.findNearestHumanoid<Human>((Humanoid *) this);
+   setNextAction(new Move(this, field, *toFollow));
 }
 
-Humanoid *Vampire::getNearerEnemy(const Field &field) const {
-   return field.findNearestHumanoid<Human>((Humanoid *) this);
-}
-
-unsigned int Vampire::getSpeed() const {
+int Vampire::getSpeed() const {
    return 1;
 }
