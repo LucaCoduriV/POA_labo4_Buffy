@@ -4,6 +4,7 @@
 
 #include "Hunter.hpp"
 #include "../action/Move.hpp"
+#include "../action/Kill.hpp"
 #include "../utils/RandomGenerator.hpp"
 #include "../ui/Displayer.hpp"
 #include "../Field.hpp"
@@ -22,7 +23,14 @@ void Hunter::display(Displayer* displayer) {
 
 void Hunter::setAction(const Field &field) {
    Humanoid* toFollow = field.findNearestHumanoid<Vampire>((Humanoid *) this);
-   setNextAction(new Move(this, field, *toFollow));
+   if (toFollow) {
+      if (isNextTo(*toFollow))
+         setNextAction(new Kill(this, toFollow));
+      else
+         setNextAction(new Move(this, field, *toFollow));
+
+   } else
+      setNextAction(new Move(this, field));
 }
 
 int Hunter::getSpeed() const {

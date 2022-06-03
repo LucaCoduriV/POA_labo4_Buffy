@@ -39,6 +39,8 @@ protected:
 
    Action* getAction() const;
 
+   bool  isNextTo(const Humanoid& other) const;
+
 private:
    Vector position;
    Action* action;

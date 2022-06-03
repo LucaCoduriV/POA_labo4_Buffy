@@ -15,14 +15,14 @@ using namespace std;
 Move::Move(Humanoid* humanoid, const Field& field) : Action(humanoid) {
 
    int moveX = createRandomNb(
-      getHumanoid()->getPosition().getX() == 0 ? 0 : -getHumanoid()->getSpeed(),
-      getHumanoid()->getPosition().getX() == field.getWidth() - 1 ? 0 :
-      getHumanoid()->getSpeed());
+      humanoid->getPosition().getX() == humanoid->getSpeed() - 1 ? 0 : -1,
+      humanoid->getPosition().getX() == field.getWidth() - humanoid->getSpeed() ?
+      0 : 1) * humanoid->getSpeed();
 
    int moveY = createRandomNb(
-      getHumanoid()->getPosition().getY() == 0 ? 0 : -getHumanoid()->getSpeed(),
-      getHumanoid()->getPosition().getY() == field.getWidth() - 1 ? 0 :
-      getHumanoid()->getSpeed());
+      getHumanoid()->getPosition().getY() == humanoid->getSpeed() - 1 ? 0 : -1,
+      getHumanoid()->getPosition().getY() == field.getWidth() - humanoid->getSpeed
+      () ? 0 : 1) * humanoid->getSpeed();
 
    nextPosition = Vector(moveX, moveY) + getHumanoid()->getPosition();
 }

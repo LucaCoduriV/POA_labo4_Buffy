@@ -42,14 +42,12 @@ std::size_t Field::nextTurn() {
    // Enlever les humanoides tués
    for (list<Humanoid*>::iterator it = humanoids.begin(); it != humanoids.end();)
       if (!(*it)->isAlive()) {
-         it = humanoids.erase(it); // suppression de l’élément dans la liste
          delete *it; // destruction de l’humanoide référencé
+         it = humanoids.erase(it); // suppression de l’élément dans la liste
       } else
          ++it;
    return turn++;
 }
-
-
 
 void Field::addHumanoid(Humanoid* humanoid) {
    humanoids.push_front(humanoid);

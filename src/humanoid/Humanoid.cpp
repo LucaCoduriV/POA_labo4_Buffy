@@ -46,3 +46,9 @@ void Humanoid::setAlive(bool alive) {
 Action *Humanoid::getAction() const {
    return action;
 }
+
+bool Humanoid::isNextTo(const Humanoid& other) const {
+   double dist = position.distance(other.position);
+   //TODO peut-être à modifier
+   return dist < 2;
+}

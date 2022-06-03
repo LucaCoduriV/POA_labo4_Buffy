@@ -10,10 +10,12 @@
 
 class Kill : public Action {
 public:
-   Kill(Humanoid* humanoid);
+   Kill(Humanoid* humanoid, Humanoid* toKill);
 
    void execute(Field& field) override;
 
+private:
+   Humanoid* toKill;
 };
 
 

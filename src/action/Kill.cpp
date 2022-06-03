@@ -9,10 +9,11 @@
 
 using namespace std;
 
-Kill::Kill(Humanoid* humanoid) : Action(humanoid) {
+Kill::Kill(Humanoid* humanoid, Humanoid* toKill) : Action(humanoid), toKill(toKill) {
 
 }
 
 void Kill::execute(Field& field) {
-   getHumanoid()->setAlive(false);
+   //TODO doit déplacer l'autre humanoid?
+   toKill->setAlive(false);
 }

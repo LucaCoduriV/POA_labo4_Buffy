@@ -21,7 +21,7 @@ public:
    template <class otherClass>
    Humanoid* findNearestHumanoid(Humanoid* humanoid)
    const {
-      Humanoid* nearest;
+      Humanoid* nearest = nullptr;
       double dist = std::numeric_limits<double>::max();
 
       for (Humanoid* other: humanoids) {
