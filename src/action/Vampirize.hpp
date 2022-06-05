@@ -10,11 +10,12 @@
 
 class Vampirize : public Action {
 public:
-   Vampirize(Humanoid* humanoid);
+   Vampirize(Humanoid* humanoid, Humanoid* toVampirize);
 
    void execute(Field& field) override;
 
-
+private:
+   Humanoid* toVampirize;
 };
 
 

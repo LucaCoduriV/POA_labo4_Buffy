@@ -3,7 +3,9 @@
 //
 
 #include "Vampire.hpp"
+#include "../action/Kill.hpp"
 #include "../action/Move.hpp"
+#include "../action/Vampirize.hpp"
 #include "../utils/RandomGenerator.hpp"
 #include "../ui/Displayer.hpp"
 #include "../Field.hpp"
@@ -21,7 +23,20 @@ void Vampire::display(Displayer* displayer) {
 
 void Vampire::setAction(const Field &field) {
    Humanoid* toFollow = field.findNearestHumanoid<Human>((Humanoid *) this);
-   setNextAction(new Move(this, field, *toFollow));
+
+   if (toFollow) {
+      if (isNextTo(*toFollow)) {
+         // 1 chance sur 2 que soit tué ou transformé en vampire
+         int kill = createRandomNb(0, 1);
+         std::cout << kill << std::endl;
+
+         if (kill)
+            setNextAction(new Kill(this, toFollow));
+         else
+            setNextAction(new Vampirize(this, toFollow));
+      } else
+         setNextAction(new Move(this, field, *toFollow));
+   }
 }
 
 int Vampire::getSpeed() const {

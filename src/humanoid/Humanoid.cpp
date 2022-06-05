@@ -25,6 +25,8 @@ bool Humanoid::isAlive() const {
 void Humanoid::executeAction(Field& field) {
    if (action)
       action->execute(field);
+
+   action = nullptr;
 }
 
 Humanoid::~Humanoid() {

@@ -8,11 +8,15 @@
 
 using namespace std;
 
-Vampirize::Vampirize(Humanoid* humanoid) : Action(humanoid) {
+//TODO toVampirize dans humanoid ou non?
+Vampirize::Vampirize(Humanoid* humanoid, Humanoid* toVampirize) : Action(humanoid)
+, toVampirize(toVampirize) {
 
 }
 
 void Vampirize::execute(Field& field) {
-   field.addHumanoid(new Vampire(getHumanoid()->getPosition()));
-   getHumanoid()->setAlive(false);
+   if (toVampirize) {
+      field.addHumanoid(new Vampire(toVampirize->getPosition()));
+      toVampirize->setAlive(false);
+   }
 }
