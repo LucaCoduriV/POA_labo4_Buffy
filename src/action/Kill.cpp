@@ -15,6 +15,6 @@ Kill::Kill(Humanoid* humanoid, Humanoid* toKill) : Action(humanoid), toKill(toKi
 
 void Kill::execute(Field& field) {
    //TODO doit déplacer l'autre humanoid?
-   if (toKill)
+   if (toKill && toKill->isAlive())
       toKill->setAlive(false);
 }

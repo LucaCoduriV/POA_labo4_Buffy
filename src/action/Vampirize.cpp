@@ -15,7 +15,7 @@ Vampirize::Vampirize(Humanoid* humanoid, Humanoid* toVampirize) : Action(humanoi
 }
 
 void Vampirize::execute(Field& field) {
-   if (toVampirize) {
+   if (toVampirize && toVampirize->isAlive()) {
       field.addHumanoid(new Vampire(toVampirize->getPosition()));
       toVampirize->setAlive(false);
    }

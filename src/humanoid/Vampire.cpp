@@ -35,7 +35,7 @@ void Vampire::setAction(const Field &field) {
          else
             setNextAction(new Vampirize(this, toFollow));
       } else
-         setNextAction(new Move(this, field, *toFollow));
+         setNextAction(new Move(this, field, 1, *toFollow));
    }
 }
 

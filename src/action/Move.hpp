@@ -10,9 +10,9 @@
 
 class Move : public Action {
 public:
-   Move(Humanoid* humanoid, const Field& field);
+   Move(Humanoid* humanoid, const Field& field, int speed);
 
-   Move(Humanoid* humanoid, const Field& field, const Humanoid& toFollow);
+   Move(Humanoid* humanoid, const Field& field, int speed, const Humanoid& toFollow);
 
    virtual void execute(Field& field) override;
 

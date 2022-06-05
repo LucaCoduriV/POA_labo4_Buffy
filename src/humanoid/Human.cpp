@@ -20,7 +20,7 @@ void Human::display(Displayer* displayer) {
 }
 
 void Human::setAction(const Field &field) {
-   setNextAction(new Move(this, field));
+   setNextAction(new Move(this, field, 1));
 }
 
 int Human::getSpeed() const {

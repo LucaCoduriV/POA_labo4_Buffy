@@ -27,10 +27,10 @@ void Hunter::setAction(const Field &field) {
       if (isNextTo(*toFollow))
          setNextAction(new Kill(this, toFollow));
       else
-         setNextAction(new Move(this, field, *toFollow));
+         setNextAction(new Move(this, field, 2, *toFollow));
 
    } else
-      setNextAction(new Move(this, field));
+      setNextAction(new Move(this, field, 1));
 }
 
 int Hunter::getSpeed() const {
