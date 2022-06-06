@@ -44,6 +44,8 @@ public:
 
    std::size_t getHeight() const;
 
+   std::size_t getTurn() const;
+
 private:
    std::size_t width;
    std::size_t height;

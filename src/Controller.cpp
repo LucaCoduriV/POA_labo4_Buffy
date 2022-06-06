@@ -12,7 +12,9 @@ field(fieldWidth, fieldHeight, nbHumans, nbVampires), displayer(displayer) {
    mainLoop();
 }
 
-Controller::UserInput Controller::getUserInputs() {
+Controller::UserInput Controller::getUserInputs() const {
+   showMenu();
+
    char key;
    cin >> key;
    UserInput input;
@@ -56,4 +58,8 @@ void Controller::mainLoop() {
          displayTurn();
       }
    } while (input != UserInput::QUIT);
+}
+
+void Controller::showMenu() const {
+   cout << "[" << field.getTurn() << "] e>quit s>tatistics n>ext :";
 }

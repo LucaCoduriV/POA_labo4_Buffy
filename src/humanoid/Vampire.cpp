@@ -13,7 +13,7 @@
 
 #include <utility>
 
-Vampire::Vampire(Vector position) : Hunter(position) {
+Vampire::Vampire(Vector position) : Humanoid(position) {
 
 }
 
@@ -28,7 +28,6 @@ void Vampire::setAction(const Field &field) {
       if (isNextTo(*toFollow)) {
          // 1 chance sur 2 que soit tué ou transformé en vampire
          int kill = createRandomNb(0, 1);
-         std::cout << kill << std::endl;
 
          if (kill)
             setNextAction(new Kill(this, toFollow));

@@ -6,10 +6,10 @@
 #define POA_LABO4_BUFFY_VAMPIRE_HPP
 
 #include <memory>
-#include "Hunter.hpp"
+#include "Humanoid.hpp"
 #include "../Vector.hpp"
 
-class Vampire : public Hunter {
+class Vampire : public Humanoid {
 public:
    Vampire(Vector position);
    void display(Displayer* displayer) override;

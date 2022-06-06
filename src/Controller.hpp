@@ -18,7 +18,10 @@ private:
 
    void displayTurn() const;
 
-   Controller::UserInput getUserInputs();
+   //TODO mettre 2 commandes suivantes dans interface Displayer ?
+   Controller::UserInput getUserInputs() const;
+
+   void showMenu() const;
 
    Displayer* displayer;
    Field field;
