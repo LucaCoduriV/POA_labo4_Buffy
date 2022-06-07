@@ -14,9 +14,13 @@ public:
    Human(Vector position);
    void display(Displayer* displayer) override;
 
-   void setAction(const Field &field) override;
+   void setAction(Field &field) override;
 
    int getSpeed() const override;
+
+   void actionWhenDie(Field &field) const override;
+
+   void actionWhenVampirized(Field& field) const;
 };
 
 

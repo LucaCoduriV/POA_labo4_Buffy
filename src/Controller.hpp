@@ -23,8 +23,13 @@ private:
 
    void showMenu() const;
 
+   void stats();
+
    Displayer* displayer;
    Field field;
+   std::size_t NB_SIMULATIONS;
+   std::size_t nbInitialHumans;
+   std::size_t nbInitialVampires;
 };
 
 

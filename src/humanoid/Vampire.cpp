@@ -21,8 +21,8 @@ void Vampire::display(Displayer* displayer) {
    displayer->display(*this);
 }
 
-void Vampire::setAction(const Field &field) {
-   Humanoid* toFollow = field.findNearestHumanoid<Human>((Humanoid *) this);
+void Vampire::setAction(Field &field) {
+   Human* toFollow = field.findNearestHumanoid<Human>((Human*) this);
 
    if (toFollow) {
       if (isNextTo(*toFollow)) {
@@ -40,4 +40,8 @@ void Vampire::setAction(const Field &field) {
 
 int Vampire::getSpeed() const {
    return 1;
+}
+
+void Vampire::actionWhenDie(Field &field) const {
+   field.vampireIsKilled();
 }

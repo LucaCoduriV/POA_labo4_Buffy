@@ -19,9 +19,9 @@ public:
    std::size_t nextTurn();
 
    template <class otherClass>
-   Humanoid* findNearestHumanoid(Humanoid* humanoid)
+   otherClass* findNearestHumanoid(Humanoid* humanoid)
    const {
-      Humanoid* nearest = nullptr;
+      otherClass* nearest = nullptr;
       double dist = std::numeric_limits<double>::max();
 
       for (Humanoid* other: humanoids) {
@@ -29,7 +29,7 @@ public:
             double newDist = humanoid->getPosition().distance(other->getPosition());
             if (newDist < dist) {
                dist = newDist;
-               nearest = other;
+               nearest = (otherClass*) other;
             }
          }
       }
@@ -46,10 +46,22 @@ public:
 
    std::size_t getTurn() const;
 
+   std::size_t getNbVampires() const;
+
+   std::size_t getNbHumans() const;
+
+   void vampireIsKilled();
+
+   void humanIsKilled();
+
+   void vampireIsCreated();
+
 private:
    std::size_t width;
    std::size_t height;
-   size_t turn;
+   std::size_t nbVampires;
+   std::size_t nbHumans;
+   std::size_t turn;
    std::list<Humanoid*> humanoids;
 };
 

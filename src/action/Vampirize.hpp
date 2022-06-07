@@ -7,15 +7,16 @@
 
 
 #include "Action.hpp"
+#include "../humanoid/Human.hpp"
 
 class Vampirize : public Action {
 public:
-   Vampirize(Humanoid* humanoid, Humanoid* toVampirize);
+   Vampirize(Humanoid* humanoid, Human* toVampirize);
 
    void execute(Field& field) override;
 
 private:
-   Humanoid* toVampirize;
+   Human* toVampirize;
 };
 
 

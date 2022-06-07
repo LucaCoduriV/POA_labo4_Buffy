@@ -12,7 +12,8 @@
 using namespace std;
 
 Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
-nbVampires) : width(fieldWidth), height(fieldHeight), turn(0) {
+nbVampires) : width(fieldWidth), height(fieldHeight), nbVampires(nbVampires),
+nbHumans(nbHumans), turn(0) {
 
    humanoids.push_front(new Hunter(Vector(
       createRandomNb(0, fieldWidth - 1),
@@ -67,6 +68,26 @@ std::size_t Field::getWidth() const {
 
 std::size_t Field::getTurn() const {
    return turn;
+}
+
+std::size_t Field::getNbVampires() const {
+   return nbVampires;
+}
+
+void Field::vampireIsKilled() {
+   nbVampires--;
+}
+
+void Field::humanIsKilled() {
+   nbHumans--;
+}
+
+std::size_t Field::getNbHumans() const {
+   return nbHumans;
+}
+
+void Field::vampireIsCreated() {
+   nbVampires++;
 }
 
 

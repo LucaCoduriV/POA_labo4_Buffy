@@ -6,6 +6,7 @@
 #include "../action/Move.hpp"
 #include "../utils/RandomGenerator.hpp"
 #include "../ui/Displayer.hpp"
+#include "../Field.hpp"
 
 #include <utility>
 
@@ -19,10 +20,19 @@ void Human::display(Displayer* displayer) {
    displayer->display(*this);
 }
 
-void Human::setAction(const Field &field) {
+void Human::setAction(Field &field) {
    setNextAction(new Move(this, field, 1));
 }
 
 int Human::getSpeed() const {
    return 1;
+}
+
+void Human::actionWhenDie(Field &field) const {
+   field.humanIsKilled();
+}
+
+void Human::actionWhenVampirized(Field &field) const {
+   field.humanIsKilled();
+   field.vampireIsCreated();
 }

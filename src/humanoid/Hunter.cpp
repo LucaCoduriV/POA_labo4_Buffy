@@ -21,7 +21,7 @@ void Hunter::display(Displayer* displayer) {
    displayer->display(*this);
 }
 
-void Hunter::setAction(const Field &field) {
+void Hunter::setAction(Field &field) {
    Humanoid* toFollow = field.findNearestHumanoid<Vampire>((Humanoid *) this);
    if (toFollow) {
       if (isNextTo(*toFollow))
@@ -35,4 +35,8 @@ void Hunter::setAction(const Field &field) {
 
 int Hunter::getSpeed() const {
    return 2;
+}
+
+void Hunter::actionWhenDie(Field &field) const {
+
 }

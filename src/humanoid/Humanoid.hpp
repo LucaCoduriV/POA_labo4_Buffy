@@ -20,7 +20,7 @@ public:
 
    bool isAlive() const;
 
-   virtual void setAction(const Field& field) = 0;
+   virtual void setAction(Field& field) = 0;
 
    void executeAction(Field& field);
 
@@ -31,6 +31,8 @@ public:
    void setAlive(bool alive);
 
    virtual int getSpeed() const = 0;
+
+   virtual void actionWhenDie(Field& field) const = 0;
 
 protected:
    explicit Humanoid(Vector position);
