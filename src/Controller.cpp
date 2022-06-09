@@ -69,6 +69,7 @@ void Controller::showMenu() const {
 
 void Controller::stats() {
    double nbBuffySuccess = 0;
+   string percent;
 
    for (size_t i = 0; i < NB_SIMULATIONS; i++) {
       Field simField(field.getWidth(), field.getHeight(),
@@ -82,7 +83,9 @@ void Controller::stats() {
          nbBuffySuccess++;
 
       //TODO afficher les chiffres qui changent
-      //cout << nbBuffySuccess / double(i + 1) * 100.0 << "%" << '\r' << flush;
+      cout << string (10, '\b');
+      percent = to_string((nbBuffySuccess / double(i + 1) * 100.0)) + "%";
+      cout << percent << "\t\r" << flush;
    }
    cout << nbBuffySuccess / double(NB_SIMULATIONS) * 100.0 << "%" << endl;
 }
