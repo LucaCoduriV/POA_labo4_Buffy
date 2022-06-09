@@ -3,6 +3,7 @@
 //
 
 #include "Controller.hpp"
+#include "DataCollector.hpp"
 
 using namespace std;
 
@@ -72,14 +73,15 @@ void Controller::stats() {
    string percent;
 
    for (size_t i = 0; i < NB_SIMULATIONS; i++) {
+      DataCollector dataCollector(nbInitialHumans,nbInitialVampires);
       Field simField(field.getWidth(), field.getHeight(),
-                     nbInitialHumans,nbInitialVampires);
+                     nbInitialHumans,nbInitialVampires, &dataCollector);
 
       do {
          simField.nextTurn();
-      } while(simField.getNbVampires() != 0);
+      } while(dataCollector.getNbVampires() != 0);
 
-      if (simField.getNbHumans() > 0)
+      if (dataCollector.getNbHumans() > 0)
          nbBuffySuccess++;
 
       //TODO afficher les chiffres qui changent

@@ -19,7 +19,7 @@ public:
    void onVampireCreated() override;
    void onVampireKilled() override;
 
-   unsigned int getNbHumanoids() const;
+   unsigned int getNbHumans() const;
 
    unsigned int getNbVampires() const;
 
