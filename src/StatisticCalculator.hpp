@@ -1,0 +1,14 @@
+//
+// Created by luca on 09/06/22.
+//
+
+#ifndef POA_LABO4_BUFFY_STATISTICCALCULATOR_HPP
+#define POA_LABO4_BUFFY_STATISTICCALCULATOR_HPP
+
+
+class StatisticCalculator {
+
+};
+
+
+#endif //POA_LABO4_BUFFY_STATISTICCALCULATOR_HPP
