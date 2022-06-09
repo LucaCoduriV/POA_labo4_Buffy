@@ -4,9 +4,6 @@
 
 #include "StatsCalculator.hpp"
 
-void StatsCalculator::onHumanCreated() {
-      humansCount++;
-}
 
 void StatsCalculator::onHumanKilled() {
       humansCount--;
