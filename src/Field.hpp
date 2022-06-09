@@ -11,11 +11,16 @@ class Humanoid;
 #include <list>
 #include "ui/Displayer.hpp"
 #include "humanoid/Vampire.hpp"
+#include "FieldEventListener.hpp"
 
 class Field {
 public:
    Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans, size_t
    nbVampires);
+
+   Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans, size_t
+   nbVampires, FieldEventListener* eventListener);
+
    std::size_t nextTurn();
 
    template <class otherClass>
@@ -63,6 +68,7 @@ private:
    std::size_t nbHumans;
    std::size_t turn;
    std::list<Humanoid*> humanoids;
+   FieldEventListener* eventListener;
 };
 
 #endif //POA_LABO4_BUFFY_FIELD_HPP

@@ -31,6 +31,12 @@ nbHumans(nbHumans), turn(0) {
          createRandomNb(0,fieldHeight - 1))));
 }
 
+Field::Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans,
+             size_t nbVampires, FieldEventListener *eventListener) : Field
+             (fieldWidth, fieldHeight, nbHumans, nbVampires){
+   this->eventListener = eventListener;
+}
+
 std::size_t Field::nextTurn() {
    // Déterminer les prochaines actions
    for (list<Humanoid*>::iterator it = humanoids.begin(); it != humanoids.end();
@@ -75,11 +81,13 @@ std::size_t Field::getNbVampires() const {
 }
 
 void Field::vampireIsKilled() {
-   nbVampires--;
+   if(eventListener != nullptr)
+      eventListener->onVampireKilled();
 }
 
 void Field::humanIsKilled() {
-   nbHumans--;
+   if(eventListener != nullptr)
+      eventListener->onHumanKilled()
 }
 
 std::size_t Field::getNbHumans() const {
@@ -87,8 +95,11 @@ std::size_t Field::getNbHumans() const {
 }
 
 void Field::vampireIsCreated() {
-   nbVampires++;
+   if(eventListener != nullptr)
+      eventListener->onVampireCreated()
 }
+
+
 
 
 
