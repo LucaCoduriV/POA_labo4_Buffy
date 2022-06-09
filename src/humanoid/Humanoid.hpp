@@ -24,7 +24,7 @@ public:
 
    void executeAction(Field& field);
 
-   virtual ~Humanoid();
+   virtual ~Humanoid() = default;
 
    void display(Displayer* displayer) override = 0;
 
@@ -45,9 +45,9 @@ protected:
 
 private:
    Vector position;
-   Action* action;
+   Action* action = nullptr;
 
-   bool alive;
+   bool alive = true;
 };
 
 

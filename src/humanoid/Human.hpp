@@ -11,7 +11,7 @@
 
 class Human : public Humanoid {
 public:
-   Human(Vector position);
+   explicit Human(Vector position);
    void display(Displayer* displayer) override;
 
    void setAction(Field &field) override;

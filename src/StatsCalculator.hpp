@@ -12,8 +12,8 @@ class StatsCalculator : public FieldEventListener {
    const size_t NB_VAMPIRES;
    size_t humansCount;
    size_t vampiresCount;
-   size_t nbSuccess;
-   size_t nbSimulations;
+   size_t nbSuccess = 0;
+   size_t nbSimulations = 0;
 public:
    StatsCalculator(size_t nbHumanoids, size_t nbVampires);
 

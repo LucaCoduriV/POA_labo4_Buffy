@@ -9,8 +9,8 @@ using namespace std;
 
 Controller::Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned
 nbVampires, unsigned nbHumans, Displayer* displayer) :
-field(fieldWidth, fieldHeight, nbHumans, nbVampires), displayer(displayer),
-NB_SIMULATIONS(10000), nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {
+   displayer(displayer), field(fieldWidth, fieldHeight, nbHumans, nbVampires),
+   nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {
    mainLoop();
 }
 

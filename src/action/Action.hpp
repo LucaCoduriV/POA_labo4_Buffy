@@ -21,7 +21,7 @@ public:
     * @param field
     */
    virtual void execute(Field& field) = 0;
-   virtual ~Action();
+   virtual ~Action() = default;
 protected:
    explicit Action(Humanoid* humanoid);
 

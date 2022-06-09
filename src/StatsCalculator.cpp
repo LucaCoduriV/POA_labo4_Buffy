@@ -28,7 +28,7 @@ size_t StatsCalculator::getNbVampires() const {
 
 StatsCalculator::StatsCalculator(size_t nbHumanoids, size_t nbVampires)
 : NB_HUMANS(nbHumanoids), NB_VAMPIRES(nbVampires), humansCount(nbHumanoids),
-vampiresCount(nbVampires), nbSuccess(0), nbSimulations(0) {}
+vampiresCount(nbVampires) {}
 
 void StatsCalculator::done() {
    if (getNbHumans() > 0){

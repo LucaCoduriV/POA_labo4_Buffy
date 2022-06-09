@@ -47,9 +47,9 @@ public:
 private:
    std::size_t width;
    std::size_t height;
-   std::size_t turn;
+   std::size_t turn = 0;
    std::list<Humanoid *> humanoids;
-   FieldEventListener *eventListener;
+   FieldEventListener* eventListener = nullptr;
 };
 
 template<class otherClass>

@@ -18,7 +18,7 @@ public:
 
    Move(Humanoid* humanoid, const Field& field, int speed, const Humanoid& toFollow);
 
-   virtual void execute(Field& field) override;
+   void execute(Field& field) override;
 
 protected:
    void setNextPosition(const Vector& position);
