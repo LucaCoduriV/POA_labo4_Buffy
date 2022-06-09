@@ -16,13 +16,13 @@ set(SOURCE src/Field.cpp src/Field.hpp
         src/utils/RandomGenerator.hpp src/utils/RandomGenerator.cpp
         src/ui/console/ColoredConsoleDisplayer.cpp
         src/ui/console/ColoredConsoleDisplayer.hpp
-        )
+        src/FieldEventListener.hpp src/StatsCalculator.cpp src/StatsCalculator.hpp src/StatisticCalculator.cpp src/StatisticCalculator.hpp)
 
 add_executable(POA_labo4_Buffy src/main.cpp ${SOURCE})
 
 add_library(Catch2 tests/catch.hpp)
 set_target_properties(Catch2 PROPERTIES LINKER_LANGUAGE CXX)
 add_executable(Test tests/catch.hpp tests/test.cpp tests/GridTest.cpp
-        tests/DisplayerConsoleTest.cpp ${SOURCE})
+        tests/DisplayerConsoleTest.cpp ${SOURCE} tests/StatisticCalculatorTest.cpp)
 
 target_link_libraries(Test Catch2)

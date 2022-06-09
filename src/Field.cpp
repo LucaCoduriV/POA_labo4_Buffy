@@ -13,7 +13,7 @@ using namespace std;
 
 Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
 nbVampires) : width(fieldWidth), height(fieldHeight), nbVampires(nbVampires),
-nbHumans(nbHumans), turn(0) {
+nbHumans(nbHumans), turn(0), eventListener(nullptr) {
 
    humanoids.push_front(new Hunter(Vector(
       createRandomNb(0, fieldWidth - 1),
@@ -29,6 +29,12 @@ nbHumans(nbHumans), turn(0) {
       humanoids.push_front(new Vampire(Vector(
          createRandomNb(0,fieldWidth - 1),
          createRandomNb(0,fieldHeight - 1))));
+}
+
+Field::Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans,
+             size_t nbVampires, FieldEventListener *eventListener) : Field
+             (fieldWidth, fieldHeight, nbHumans, nbVampires){
+   this->eventListener = eventListener;
 }
 
 std::size_t Field::nextTurn() {
@@ -75,11 +81,13 @@ std::size_t Field::getNbVampires() const {
 }
 
 void Field::vampireIsKilled() {
-   nbVampires--;
+   if(eventListener != nullptr)
+      eventListener->onVampireKilled();
 }
 
 void Field::humanIsKilled() {
-   nbHumans--;
+   if(eventListener != nullptr)
+      eventListener->onHumanKilled();
 }
 
 std::size_t Field::getNbHumans() const {
@@ -87,8 +95,11 @@ std::size_t Field::getNbHumans() const {
 }
 
 void Field::vampireIsCreated() {
-   nbVampires++;
+   if(eventListener != nullptr)
+      eventListener->onVampireCreated();
 }
+
+
 
 
 
