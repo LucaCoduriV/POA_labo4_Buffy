@@ -16,7 +16,7 @@ set(SOURCE src/Field.cpp src/Field.hpp
         src/utils/RandomGenerator.hpp src/utils/RandomGenerator.cpp
         src/ui/console/ColoredConsoleDisplayer.cpp
         src/ui/console/ColoredConsoleDisplayer.hpp
-        src/FieldEventListener.hpp src/DataCollector.cpp src/DataCollector.hpp src/StatisticCalculator.cpp src/StatisticCalculator.hpp)
+        src/FieldEventListener.hpp src/StatsCalculator.cpp src/StatsCalculator.hpp src/StatisticCalculator.cpp src/StatisticCalculator.hpp)
 
 add_executable(POA_labo4_Buffy src/main.cpp ${SOURCE})
 

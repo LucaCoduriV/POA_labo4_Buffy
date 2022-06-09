@@ -3,7 +3,7 @@
 //
 
 #include "Controller.hpp"
-#include "DataCollector.hpp"
+#include "StatsCalculator.hpp"
 
 using namespace std;
 
@@ -69,25 +69,17 @@ void Controller::showMenu() const {
 }
 
 void Controller::stats() {
-   double nbBuffySuccess = 0;
-   string percent;
-
+   StatsCalculator statsCalculator(nbInitialHumans, nbInitialVampires);
    for (size_t i = 0; i < NB_SIMULATIONS; i++) {
-      DataCollector dataCollector(nbInitialHumans,nbInitialVampires);
+
       Field simField(field.getWidth(), field.getHeight(),
-                     nbInitialHumans,nbInitialVampires, &dataCollector);
+                     nbInitialHumans,nbInitialVampires, &statsCalculator);
 
       do {
          simField.nextTurn();
-      } while(dataCollector.getNbVampires() != 0);
+      } while(statsCalculator.getNbVampires() != 0);
 
-      if (dataCollector.getNbHumans() > 0)
-         nbBuffySuccess++;
-
-      //TODO afficher les chiffres qui changent
-      cout << string (10, '\b');
-      percent = to_string((nbBuffySuccess / double(i + 1) * 100.0)) + "%";
-      cout << percent << "\t\r" << flush;
+      statsCalculator.done();
    }
-   cout << nbBuffySuccess / double(NB_SIMULATIONS) * 100.0 << "%" << endl;
+   cout << statsCalculator.getSuccessRate() << "%" << endl;
 }
