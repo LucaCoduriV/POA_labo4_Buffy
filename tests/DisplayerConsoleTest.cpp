@@ -20,7 +20,7 @@ TEST_CASE( "Should show a grid with humanoids" ) {
       (10,10);
 
    for(auto& x : displayables) {
-      x->display(consoleDisplayer);
+      x->display(consoleDisplayer.get());
    }
 
    consoleDisplayer->show();
