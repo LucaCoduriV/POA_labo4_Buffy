@@ -20,7 +20,7 @@ void DataCollector::onVampireKilled() {
       nbVampires--;
 }
 
-unsigned int DataCollector::getNbHumanoids() const {
+unsigned int DataCollector::getNbHumans() const {
    return nbHumanoids;
 }
 

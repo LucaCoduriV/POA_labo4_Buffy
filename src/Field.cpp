@@ -87,7 +87,7 @@ void Field::vampireIsKilled() {
 
 void Field::humanIsKilled() {
    if(eventListener != nullptr)
-      eventListener->onHumanKilled()
+      eventListener->onHumanKilled();
 }
 
 std::size_t Field::getNbHumans() const {
@@ -96,7 +96,7 @@ std::size_t Field::getNbHumans() const {
 
 void Field::vampireIsCreated() {
    if(eventListener != nullptr)
-      eventListener->onVampireCreated()
+      eventListener->onVampireCreated();
 }
 
 
