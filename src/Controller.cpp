@@ -82,7 +82,7 @@ void Controller::stats() {
          nbBuffySuccess++;
 
       //TODO afficher les chiffres qui changent
-      //cout << nbBuffySuccess / double(i + 1) * 100.0 << "%" << endl;
+      //cout << nbBuffySuccess / double(i + 1) * 100.0 << "%" << '\r' << flush;
    }
    cout << nbBuffySuccess / double(NB_SIMULATIONS) * 100.0 << "%" << endl;
 }

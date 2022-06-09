@@ -8,7 +8,6 @@
 
 using namespace std;
 
-//TODO toVampirize dans humanoid ou non?
 Vampirize::Vampirize(Humanoid* humanoid, Human* toVampirize) : Action(humanoid)
 , toVampirize(toVampirize) {
 
