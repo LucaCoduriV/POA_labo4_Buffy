@@ -9,6 +9,10 @@
 #include "Action.hpp"
 #include "../humanoid/Human.hpp"
 
+/**
+ * This class is used to vampirize an other Humanoid.
+ * @author Chloé Fontaine
+ */
 class Vampirize : public Action {
 public:
    Vampirize(Humanoid* humanoid, Human* toVampirize);
