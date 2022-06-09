@@ -23,7 +23,7 @@ private:
 
    void showMenu() const;
 
-   void stats();
+   void stats() const;
 
    Displayer* displayer;
    Field field;

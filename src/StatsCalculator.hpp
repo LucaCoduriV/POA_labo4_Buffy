@@ -8,22 +8,22 @@
  * Calculate the stats of multiple simulations of buffy killing vampires.
  */
 class StatsCalculator : public FieldEventListener {
-   const unsigned NB_HUMANS;
-   const unsigned NB_VAMPIRES;
-   unsigned humansCount;
-   unsigned vampiresCount;
-   unsigned nbSuccess;
-   unsigned nbSimulations;
+   const size_t NB_HUMANS;
+   const size_t NB_VAMPIRES;
+   size_t humansCount;
+   size_t vampiresCount;
+   size_t nbSuccess;
+   size_t nbSimulations;
 public:
-   StatsCalculator(unsigned nbHumanoids, unsigned nbVampires);
+   StatsCalculator(size_t nbHumanoids, size_t nbVampires);
 
    void onHumanKilled() override;
    void onVampireCreated() override;
    void onVampireKilled() override;
 
-   unsigned int getNbHumans() const;
+   size_t getNbHumans() const;
 
-   unsigned int getNbVampires() const;
+   size_t getNbVampires() const;
 
 
    /**

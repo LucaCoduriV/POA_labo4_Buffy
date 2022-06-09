@@ -68,7 +68,7 @@ void Controller::showMenu() const {
    cout << "[" << field.getTurn() << "] e>quit s>tatistics n>ext :";
 }
 
-void Controller::stats() {
+void Controller::stats() const {
    StatsCalculator statsCalculator(nbInitialHumans, nbInitialVampires);
    for (size_t i = 0; i < NB_SIMULATIONS; i++) {
 

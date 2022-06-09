@@ -2,6 +2,7 @@
 // Created by luca on 09/06/22.
 //
 
+#include <cstdlib>
 #include "StatsCalculator.hpp"
 
 
@@ -17,15 +18,15 @@ void StatsCalculator::onVampireKilled() {
       vampiresCount--;
 }
 
-unsigned int StatsCalculator::getNbHumans() const {
+size_t StatsCalculator::getNbHumans() const {
    return humansCount;
 }
 
-unsigned int StatsCalculator::getNbVampires() const {
+size_t StatsCalculator::getNbVampires() const {
    return vampiresCount;
 }
 
-StatsCalculator::StatsCalculator(unsigned int nbHumanoids, unsigned int nbVampires)
+StatsCalculator::StatsCalculator(size_t nbHumanoids, size_t nbVampires)
 : NB_HUMANS(nbHumanoids), NB_VAMPIRES(nbVampires), humansCount(nbHumanoids),
 vampiresCount(nbVampires), nbSuccess(0), nbSimulations(0) {}
 
@@ -39,5 +40,5 @@ void StatsCalculator::done() {
 }
 
 double StatsCalculator::getSuccessRate() const {
-   return (double)nbSuccess / nbSimulations * 100;
+   return (double)nbSuccess / (double)nbSimulations * 100;
 }
