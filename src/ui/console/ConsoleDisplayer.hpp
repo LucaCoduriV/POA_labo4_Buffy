@@ -11,7 +11,10 @@
 #include "Grid.hpp"
 
 
-
+/**
+ * This class shows the field in a console.
+ * @author Luca Coduri & Chloé Fontaine
+ */
 class ConsoleDisplayer : public Displayer {
 public:
    ConsoleDisplayer(unsigned height, unsigned width);
@@ -19,7 +22,7 @@ public:
    void display(const Hunter& shared_humanoid) override;
    void display(const Human& shared_humanoid) override;
 
-   void show() const;
+   void show() const override;
    void clear() override;
 
    std::string toString() const;
