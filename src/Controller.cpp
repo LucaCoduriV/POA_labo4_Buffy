@@ -75,13 +75,14 @@ void Controller::stats() {
                      nbInitialHumans,nbInitialVampires);
 
       do {
-         field.nextTurn();
-      } while(field.getNbVampires() != 0);
+         simField.nextTurn();
+      } while(simField.getNbVampires() != 0);
 
-      if (field.getNbHumans() > 0)
+      if (simField.getNbHumans() > 0)
          nbBuffySuccess++;
 
-      cout << nbBuffySuccess / double(i + 1) * 100 << "%" << endl;
-
+      //TODO afficher les chiffres qui changent
+      //cout << nbBuffySuccess / double(i + 1) * 100.0 << "%" << '\r' << flush;
    }
+   cout << nbBuffySuccess / double(NB_SIMULATIONS) * 100.0 << "%" << endl;
 }
