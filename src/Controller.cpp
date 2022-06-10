@@ -54,6 +54,6 @@ void Controller::stats() const {
 
       statsCalculator.done();
 
-      displayer->showStats(statsCalculator.getSuccessRate()));
+      displayer->showStats(statsCalculator.getSuccessRate());
    }
 }
