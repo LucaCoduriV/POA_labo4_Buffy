@@ -11,6 +11,10 @@ Controller::Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned
 nbVampires, unsigned nbHumans, Displayer* displayer) :
    displayer(displayer), field(fieldWidth, fieldHeight, nbHumans, nbVampires),
    nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {
+
+   if (!displayer)
+      throw invalid_argument("Displayer must not be null");
+
    mainLoop();
 }
 

@@ -9,10 +9,21 @@
 
 class Controller {
 public:
+   /**
+    * Constroller constructor.
+    * @param fieldWidth field's width
+    * @param fieldHeight field's height
+    * @param nbVampires number of vampires to create
+    * @param nbHumans number of humans to create
+    * @param displayer displayer for outputs and inputs
+    */
    Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned nbVampires,
               unsigned nbHumans, Displayer* displayer);
 
 private:
+   /**
+    * Simulation main loop
+    */
    void mainLoop();
 
    void displayTurn() const;
