@@ -8,8 +8,10 @@
 #include <iostream>
 #include "ConsoleDisplayer.hpp"
 
-using namespace std;
-
+/**
+ * This class shows the field in a console with colors.
+ * @author Luca Coduri & Chloé Fontaine
+ */
 class ColoredConsoleDisplayer : public ConsoleDisplayer{
 public:
    ColoredConsoleDisplayer(unsigned height, unsigned width);

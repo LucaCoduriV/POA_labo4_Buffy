@@ -11,7 +11,7 @@
 
 class Vampire : public Humanoid {
 public:
-   Vampire(Vector position);
+   explicit Vampire(Vector position);
    void display(Displayer* displayer) override;
 
    void setAction(Field &field) override;

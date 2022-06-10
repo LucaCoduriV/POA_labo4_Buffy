@@ -8,13 +8,17 @@
 #include "../Vector.hpp"
 #include "Action.hpp"
 
+/**
+ * This class is used to move an Humanoid.
+ * @author Chloé Fontaine
+ */
 class Move : public Action {
 public:
    Move(Humanoid* humanoid, const Field& field, int speed);
 
    Move(Humanoid* humanoid, const Field& field, int speed, const Humanoid& toFollow);
 
-   virtual void execute(Field& field) override;
+   void execute(Field& field) override;
 
 protected:
    void setNextPosition(const Vector& position);

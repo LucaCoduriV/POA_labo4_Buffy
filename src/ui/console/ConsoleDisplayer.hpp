@@ -11,7 +11,10 @@
 #include "Grid.hpp"
 
 
-
+/**
+ * This class shows the field in a console.
+ * @author Luca Coduri & Chloé Fontaine
+ */
 class ConsoleDisplayer : public Displayer {
 public:
    ConsoleDisplayer(unsigned height, unsigned width);

@@ -6,10 +6,6 @@
 
 using namespace std;
 
-Action::~Action() {
-
-}
-
 Action::Action(Humanoid* humanoid) : humanoid(humanoid) {
 
 }

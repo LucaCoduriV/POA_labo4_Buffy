@@ -17,11 +17,11 @@ private:
 
    void displayTurn() const;
 
-   void stats();
+   void stats() const;
 
    Displayer* displayer;
    Field field;
-   std::size_t NB_SIMULATIONS;
+   std::size_t NB_SIMULATIONS = 10000;
    std::size_t nbInitialHumans;
    std::size_t nbInitialVampires;
 };

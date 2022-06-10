@@ -11,9 +11,14 @@
 
 using namespace std;
 
+Field::Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans,
+             size_t nbVampires, FieldEventListener *eventListener) :
+   Field(fieldWidth, fieldHeight, nbHumans, nbVampires) {
+   this->eventListener = eventListener;
+}
+
 Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
-nbVampires) : width(fieldWidth), height(fieldHeight), nbVampires(nbVampires),
-nbHumans(nbHumans), turn(0) {
+nbVampires) : width(fieldWidth), height(fieldHeight) {
 
    humanoids.push_front(new Hunter(Vector(
       createRandomNb(0, fieldWidth - 1),
@@ -33,15 +38,13 @@ nbHumans(nbHumans), turn(0) {
 
 std::size_t Field::nextTurn() {
    // Déterminer les prochaines actions
-   for (list<Humanoid*>::iterator it = humanoids.begin(); it != humanoids.end();
-   it++)
-      (*it)->setAction(*this);
+   for (auto & humanoid : humanoids)
+      humanoid->setAction(*this);
    // Executer les actions
-   for (list<Humanoid*>::iterator it = humanoids.begin(); it != humanoids.end();
-        it++)
-      (*it)->executeAction(*this);
+   for (auto & humanoid : humanoids)
+      humanoid->executeAction(*this);
    // Enlever les humanoides tués
-   for (list<Humanoid*>::iterator it = humanoids.begin(); it != humanoids.end();)
+   for (auto it = humanoids.begin(); it != humanoids.end();)
       if (!(*it)->isAlive()) {
          delete *it; // destruction de l’humanoide référencé
          it = humanoids.erase(it); // suppression de l’élément dans la liste
@@ -70,25 +73,22 @@ std::size_t Field::getTurn() const {
    return turn;
 }
 
-std::size_t Field::getNbVampires() const {
-   return nbVampires;
-}
-
 void Field::vampireIsKilled() {
-   nbVampires--;
+   if(eventListener != nullptr)
+      eventListener->onVampireKilled();
 }
 
 void Field::humanIsKilled() {
-   nbHumans--;
-}
-
-std::size_t Field::getNbHumans() const {
-   return nbHumans;
+   if(eventListener != nullptr)
+      eventListener->onHumanKilled();
 }
 
 void Field::vampireIsCreated() {
-   nbVampires++;
+   if(eventListener != nullptr)
+      eventListener->onVampireCreated();
 }
+
+
 
 
 

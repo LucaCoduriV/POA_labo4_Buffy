@@ -9,8 +9,7 @@
 
 using namespace std;
 
-Humanoid::Humanoid(Vector position) : position(position), alive
-(true), action(nullptr){
+Humanoid::Humanoid(Vector position) : position(position) {
 
 }
 
@@ -27,10 +26,6 @@ void Humanoid::executeAction(Field& field) {
       action->execute(field);
 
    action = nullptr;
-}
-
-Humanoid::~Humanoid() {
-
 }
 
 void Humanoid::setPosition(const Vector &position) {

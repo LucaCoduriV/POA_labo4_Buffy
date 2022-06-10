@@ -38,5 +38,5 @@ int Hunter::getSpeed() const {
 }
 
 void Hunter::actionWhenDie(Field &field) const {
-
+   // do nothing
 }

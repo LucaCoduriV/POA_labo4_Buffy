@@ -13,6 +13,9 @@
 #include "Displayable.hpp"
 #include "../../Vector.hpp"
 
+/**
+ * This class contains the representation of humanoids in a grid.
+ */
 class Grid {
    friend std::ostream &operator<<(std::ostream &os, const Grid &grid);
 
@@ -20,7 +23,16 @@ public:
 
    Grid(unsigned width, unsigned height);
    std::string toString() const;
+   /**
+    * Adds a symbol to the grid.
+    * @param pos the position where to add the symbol
+    * @param symbol the symbol to add
+    */
    void drawInToBlackboard(const Vector& pos, std::string symbol);
+
+   /**
+    * Removes all the symbols from the grid.
+    */
    void clearBlackBoard();
 
 private:

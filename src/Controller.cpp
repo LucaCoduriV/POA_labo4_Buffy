@@ -3,13 +3,14 @@
 //
 
 #include "Controller.hpp"
+#include "StatsCalculator.hpp"
 
 using namespace std;
 
 Controller::Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned
 nbVampires, unsigned nbHumans, Displayer* displayer) :
-field(fieldWidth, fieldHeight, nbHumans, nbVampires), displayer(displayer),
-NB_SIMULATIONS(10000), nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {
+   displayer(displayer), field(fieldWidth, fieldHeight, nbHumans, nbVampires),
+   nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {
    mainLoop();
 }
 
@@ -40,21 +41,19 @@ void Controller::mainLoop() {
    } while (input != Displayer::UserInput::QUIT);
 }
 
-void Controller::stats() {
-   double nbBuffySuccess = 0;
-   string percent;
-
+void Controller::stats() const {
+   StatsCalculator statsCalculator(nbInitialHumans, nbInitialVampires);
    for (size_t i = 0; i < NB_SIMULATIONS; i++) {
+
       Field simField(field.getWidth(), field.getHeight(),
-                     nbInitialHumans,nbInitialVampires);
+                     nbInitialHumans,nbInitialVampires, &statsCalculator);
 
       do {
          simField.nextTurn();
-      } while(simField.getNbVampires() != 0);
+      } while(statsCalculator.getNbVampires() != 0);
 
-      if (simField.getNbHumans() > 0)
-         nbBuffySuccess++;
+      statsCalculator.done();
 
-      displayer->showStats(nbBuffySuccess / double(i + 1) * 100.0);
+      displayer->showStats(statsCalculator.getSuccessRate()));
    }
 }
