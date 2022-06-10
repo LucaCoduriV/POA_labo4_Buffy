@@ -12,13 +12,13 @@
 using namespace std;
 
 Field::Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans,
-             size_t nbVampires, FieldEventListener *eventListener) :
-   Field(fieldWidth, fieldHeight, nbHumans, nbVampires) {
-   this->eventListener = eventListener;
+             size_t nbVampires) :
+   Field(fieldWidth, fieldHeight, nbHumans, nbVampires, nullptr) {
 }
 
 Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
-nbVampires) : width(fieldWidth), height(fieldHeight) {
+nbVampires, FieldEventListener *eventListener) : width(fieldWidth), height
+(fieldHeight), eventListener(eventListener) {
 
    humanoids.push_front(new Hunter(Vector(
       createRandomNb(0, fieldWidth - 1),
