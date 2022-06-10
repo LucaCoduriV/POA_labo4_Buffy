@@ -19,8 +19,11 @@ public:
    void display(const Hunter& shared_humanoid) override;
    void display(const Human& shared_humanoid) override;
 
-   void show() const;
+   void show() const override;
+   void showStats(double percent) const override;
+   void showMenu(size_t turn) const override;
    void clear() override;
+   Displayer::UserInput getUserInput() const override;
 
    std::string toString() const;
 

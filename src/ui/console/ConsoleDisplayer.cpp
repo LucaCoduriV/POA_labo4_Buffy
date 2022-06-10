@@ -45,4 +45,35 @@ void ConsoleDisplayer::clear() {
    grid.clearBlackBoard();
 }
 
+void ConsoleDisplayer::showStats(double percent) const {
+   cout << percent << "%"  << endl;
+}
+
+void ConsoleDisplayer::showMenu(size_t turn) const {
+   cout << endl << "[" << turn << "] e>quit s>tatistics n>ext :";
+}
+
+Displayer::UserInput ConsoleDisplayer::getUserInput() const {
+   char key;
+   cin >> key;
+   UserInput input;
+
+   switch (key) {
+      case 's':
+         input = UserInput::STAT;
+         break;
+      case 'n':
+         input = UserInput::NEXT;
+         break;
+      case 'e':
+         input  = UserInput::QUIT;
+         break;
+      default:
+         throw runtime_error("Key not recognized");
+   }
+
+   cin.ignore(10000, '\n');
+   return input;
+}
+
 

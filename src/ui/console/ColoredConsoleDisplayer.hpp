@@ -5,8 +5,10 @@
 #ifndef POA_LABO4_BUFFY_COLOREDCONSOLEDISPLAYER_HPP
 #define POA_LABO4_BUFFY_COLOREDCONSOLEDISPLAYER_HPP
 
-
+#include <iostream>
 #include "ConsoleDisplayer.hpp"
+
+using namespace std;
 
 class ColoredConsoleDisplayer : public ConsoleDisplayer{
 public:
@@ -14,6 +16,8 @@ public:
    std::string getHumanChar() override;
    std::string getHunterChar() override;
    std::string getVampireChar() override;
+
+   void showStats(double percent) const override;
 
 private:
    static const char* RED;

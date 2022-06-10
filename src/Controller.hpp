@@ -8,7 +8,6 @@
 #include "Field.hpp"
 
 class Controller {
-   enum class UserInput {NEXT, STAT, QUIT};
 public:
    Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned nbVampires,
               unsigned nbHumans, Displayer* displayer);
@@ -17,11 +16,6 @@ private:
    void mainLoop();
 
    void displayTurn() const;
-
-   //TODO mettre 2 commandes suivantes dans interface Displayer ?
-   Controller::UserInput getUserInputs() const;
-
-   void showMenu() const;
 
    void stats();
 

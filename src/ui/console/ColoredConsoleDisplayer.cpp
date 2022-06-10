@@ -30,3 +30,8 @@ std::string ColoredConsoleDisplayer::getHunterChar() {
 std::string ColoredConsoleDisplayer::getVampireChar() {
    return RED + ConsoleDisplayer::getVampireChar() + NC;
 }
+
+void ColoredConsoleDisplayer::showStats(double percent) const {
+   cout << string (10, '\b');
+   cout << percent <<  "%";
+}

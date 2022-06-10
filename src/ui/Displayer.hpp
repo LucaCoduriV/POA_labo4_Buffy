@@ -11,12 +11,16 @@ class Human;
 
 class Displayer {
 public:
+   enum class UserInput {NEXT, STAT, QUIT};
+
    virtual void display(const Vampire& shared_humanoid) = 0;
    virtual void display(const Hunter& shared_humanoid) = 0;
    virtual void display(const Human& shared_humanoid) = 0;
-   virtual ~Displayer() = default;
    virtual void show() const = 0;
+   virtual void showMenu(size_t turn) const = 0;
+   virtual void showStats(double percent) const = 0;
    virtual void clear() = 0;
+   virtual UserInput getUserInput() const = 0;
 };
 
 

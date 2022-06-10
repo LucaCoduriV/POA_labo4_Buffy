@@ -13,31 +13,6 @@ NB_SIMULATIONS(10000), nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) 
    mainLoop();
 }
 
-Controller::UserInput Controller::getUserInputs() const {
-   showMenu();
-
-   char key;
-   cin >> key;
-   UserInput input;
-
-   switch (key) {
-      case 's':
-         input = UserInput::STAT;
-         break;
-      case 'n':
-         input = UserInput::NEXT;
-         break;
-      case 'e':
-         input  = UserInput::QUIT;
-         break;
-      default:
-         throw runtime_error("Key not recognized");
-   }
-
-   cin.ignore(10000, '\n');
-   return input;
-}
-
 void Controller::displayTurn() const {
    displayer->clear();
 
@@ -49,22 +24,20 @@ void Controller::displayTurn() const {
 }
 
 void Controller::mainLoop() {
-   UserInput input;
+   Displayer::UserInput input;
    displayTurn();
 
    do {
-      input = getUserInputs();
-      if (input == UserInput::NEXT) {
+      displayer->showMenu(field.getTurn());
+      input = displayer->getUserInput();
+
+      if (input == Displayer::UserInput::NEXT) {
          field.nextTurn();
          displayTurn();
-      } else if (input == UserInput::STAT) {
+      } else if (input == Displayer::UserInput::STAT) {
          stats();
       }
-   } while (input != UserInput::QUIT);
-}
-
-void Controller::showMenu() const {
-   cout << "[" << field.getTurn() << "] e>quit s>tatistics n>ext :";
+   } while (input != Displayer::UserInput::QUIT);
 }
 
 void Controller::stats() {
@@ -82,10 +55,6 @@ void Controller::stats() {
       if (simField.getNbHumans() > 0)
          nbBuffySuccess++;
 
-      //TODO afficher les chiffres qui changent
-      cout << string (10, '\b');
-      percent = to_string((nbBuffySuccess / double(i + 1) * 100.0)) + "%";
-      cout << percent << "\t\r" << flush;
+      displayer->showStats(nbBuffySuccess / double(i + 1) * 100.0);
    }
-   cout << nbBuffySuccess / double(NB_SIMULATIONS) * 100.0 << "%" << endl;
 }
