@@ -27,7 +27,7 @@ public:
     * @param nbHumans initial number of humans
     * @param nbVampires initial number of vampires
     */
-   Field(int fieldWidth, int fieldHeight, size_t nbHumans, size_t
+   Field(unsigned int fieldWidth, unsigned int fieldHeight, size_t nbHumans, size_t
    nbVampires);
 
    /**

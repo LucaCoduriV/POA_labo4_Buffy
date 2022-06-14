@@ -20,7 +20,7 @@ public:
     * @param nbHumans number of humans to create
     * @param displayer displayer for outputs and inputs
     */
-   Controller(int fieldWidth, int fieldHeight, std::size_t nbVampires,
+   Controller(unsigned int fieldWidth, unsigned int fieldHeight, std::size_t nbVampires,
               std::size_t nbHumans, Displayer *displayer);
 
 private:

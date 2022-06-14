@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Controller::Controller(int fieldWidth, int fieldHeight, size_t
+Controller::Controller(unsigned int fieldWidth, unsigned int fieldHeight, size_t
 nbVampires, size_t nbHumans, Displayer *displayer) :
    displayer(displayer), field(fieldWidth, fieldHeight, nbHumans, nbVampires),
    nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {

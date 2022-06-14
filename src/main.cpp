@@ -9,7 +9,7 @@ const int FIELD_WIDTH = 50;
 
 void printArgsErrorMessage(const char* programName){
    cout << "Usage: " << programName << " <height> <width> <nbVampires> <nbHumans> "
-                                       "| args has to be a number greather than 0" <<
+                                       "| args has to be a number greater than 0." <<
         endl;
 }
 
@@ -27,13 +27,7 @@ int main(int argc, char *argv[]) {
    if(height == 0L || width == 0L || nbVampires == 0L || nbHumans == 0L) {
       printArgsErrorMessage(argv[0]);
       return EXIT_FAILURE;
-   }else{
-      cout << "height: " << height << endl;
-      cout << "width: " << width << endl;
-      cout << "nbVampires: " << nbVampires << endl;
-      cout << "nbHumans: " << nbHumans << endl;
    }
-
 
    try {
       auto displayer =

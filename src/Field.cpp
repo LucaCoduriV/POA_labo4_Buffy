@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans,
+Field::Field(unsigned int fieldWidth, unsigned int fieldHeight, size_t nbHumans,
              size_t nbVampires) :
    Field(fieldWidth, fieldHeight, nbHumans, nbVampires, nullptr) {
 }
