@@ -21,10 +21,13 @@ bool Humanoid::isAlive() const {
 }
 
 void Humanoid::executeAction(Field& field) {
-   if (action)
+   if (action){
       action->execute(field);
+      delete action;
+      action = nullptr;
+   }
 
-   action = nullptr;
+
 }
 
 void Humanoid::setPosition(const Vector &position) {
