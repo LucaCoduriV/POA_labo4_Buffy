@@ -47,7 +47,7 @@ void ConsoleDisplayer::showStats(double percent) const {
 }
 
 void ConsoleDisplayer::showMenu(size_t turn) const {
-   cout << endl << "[" << turn << "] e>quit s>tatistics n>ext :";
+   cout << endl << "[" << turn << "] q>quit s>tatistics n>ext :";
 }
 
 Displayer::UserInput ConsoleDisplayer::getUserInput() const {

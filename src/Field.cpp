@@ -12,7 +12,7 @@ Field::Field(unsigned int fieldWidth, unsigned int fieldHeight, size_t nbHumans,
    Field(fieldWidth, fieldHeight, nbHumans, nbVampires, nullptr) {
 }
 
-Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans, size_t
+Field::Field(unsigned int fieldWidth, unsigned int fieldHeight, size_t nbHumans, size_t
 nbVampires, FieldEventListener *eventListener) : width(fieldWidth), height
    (fieldHeight), eventListener(eventListener) {
 
@@ -20,19 +20,19 @@ nbVampires, FieldEventListener *eventListener) : width(fieldWidth), height
       invalid_argument("Field's height and width should be greater than 0.");
 
    humanoids.push_front(new Hunter(Vector(
-      createRandomNb(0, fieldWidth - 1),
-      createRandomNb(0, fieldHeight - 1)
+      createRandomNb(0L, fieldWidth - 1),
+      createRandomNb(0L, fieldHeight - 1)
    )));
 
    for (size_t i = 0; i < nbHumans; i++)
       humanoids.push_front(new Human(Vector(
-         createRandomNb(0, fieldWidth - 1),
-         createRandomNb(0, fieldHeight - 1))));
+         createRandomNb(0L, fieldWidth - 1),
+         createRandomNb(0L, fieldHeight - 1))));
 
    for (size_t i = 0; i < nbVampires; i++)
       humanoids.push_front(new Vampire(Vector(
-         createRandomNb(0, fieldWidth - 1),
-         createRandomNb(0, fieldHeight - 1))));
+         createRandomNb(0L, fieldWidth - 1),
+         createRandomNb(0L, fieldHeight - 1))));
 }
 
 Field::~Field() {
@@ -68,11 +68,11 @@ list<Humanoid *> Field::getHumanoids() const {
    return humanoids;
 }
 
-int Field::getHeight() const {
+unsigned int Field::getHeight() const {
    return height;
 }
 
-int Field::getWidth() const {
+unsigned int Field::getWidth() const {
    return width;
 }
 

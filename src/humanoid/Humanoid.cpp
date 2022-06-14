@@ -8,7 +8,7 @@ Humanoid::Humanoid(Vector position) : position(position) {
 }
 
 Humanoid::~Humanoid() {
-   if (action)
+
       delete action;
 }
 
@@ -33,13 +33,8 @@ void Humanoid::setPosition(const Vector &position) {
 }
 
 void Humanoid::setNewAction(Action *newAction) {
-   if (action)
-      delete action;
+   delete action;
    action = newAction;
-}
-
-Action *Humanoid::getAction() const {
-   return action;
 }
 
 bool Humanoid::isNextTo(const Humanoid &other) const {

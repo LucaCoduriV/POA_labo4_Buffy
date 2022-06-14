@@ -37,7 +37,7 @@ public:
     */
    friend Vector operator*(int mult, const Vector &v1);
 
-   Vector(int x, int y);
+   Vector(long long int x, long long int y);
 
    Vector();
 
@@ -52,15 +52,13 @@ public:
 
    Vector direction(const Vector &to) const;
 
-   int getX() const;
+   long long int getX() const;
 
-   int getY() const;
-
-   void setCoor(int x, int y);
+   long long int getY() const;
 
 private:
-   int x;
-   int y;
+   long long x;
+   long long y;
 };
 
 

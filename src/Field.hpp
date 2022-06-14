@@ -40,7 +40,7 @@ public:
     * @param nbVampires
     * @param eventListener
     */
-   Field(int fieldWidth, int fieldHeight, size_t nbHumans, size_t
+   Field(unsigned int fieldWidth, unsigned int fieldHeight, size_t nbHumans, size_t
    nbVampires, FieldEventListener *eventListener);
 
    ~Field();
@@ -77,13 +77,13 @@ public:
     * Get the field's width
     * @return the field's width
     */
-   int getWidth() const;
+   unsigned int getWidth() const;
 
    /**
     * Get the field's height
     * @return the field's height
     */
-   int getHeight() const;
+   unsigned int getHeight() const;
 
    /**
     * Get the current turn
@@ -107,8 +107,8 @@ public:
    void vampireIsCreated();
 
 private:
-   int width;
-   int height;
+   unsigned width;
+   unsigned height;
    std::size_t turn = 0;
    std::list<Humanoid *> humanoids;
    FieldEventListener* eventListener;

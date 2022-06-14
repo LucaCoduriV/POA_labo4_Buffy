@@ -11,6 +11,7 @@
  * @return a random number.
  */
 int createRandomNb(int min, int max);
+unsigned createRandomNb(unsigned min, unsigned max);
 
 
 #endif //POA_LABO4_BUFFY_RANDOMGENERATOR_HPP

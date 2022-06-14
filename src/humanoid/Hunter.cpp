@@ -1,7 +1,6 @@
 #include "Hunter.hpp"
 #include "../action/Move.hpp"
 #include "../action/Kill.hpp"
-#include "../utils/RandomGenerator.hpp"
 #include "../ui/Displayer.hpp"
 #include "../Field.hpp"
 
@@ -26,10 +25,6 @@ void Hunter::setAction(Field &field) {
 
    } else
       setNewAction(new Move(this, field, 1));
-}
-
-int Hunter::getSpeed() const {
-   return 2;
 }
 
 void Hunter::actionWhenDie(Field &field) {

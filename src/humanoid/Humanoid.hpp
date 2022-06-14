@@ -55,12 +55,6 @@ public:
    void display(Displayer* displayer) override = 0;
 
    /**
-    * Get speed.
-    * @return the humanoid speed
-    */
-   virtual int getSpeed() const = 0;
-
-   /**
     * Action to call to kill a humanoid.
     * @param field the humanoid's field
     */
@@ -78,12 +72,6 @@ protected:
     * @param newAction
     */
    void setNewAction(Action* newAction);
-
-   /**
-    * Get action.
-    * @return the action
-    */
-   Action* getAction() const;
 
    /**
     * Check if humanoid is next to another humanoid (distance of 1 in line or diag).

@@ -21,8 +21,6 @@ public:
 
    void setAction(Field &field) override;
 
-   int getSpeed() const override;
-
    void actionWhenDie(Field &field) override;
 
    /**

@@ -1,6 +1,5 @@
 #include "Human.hpp"
 #include "../action/Move.hpp"
-#include "../utils/RandomGenerator.hpp"
 #include "../ui/Displayer.hpp"
 #include "../Field.hpp"
 
@@ -17,10 +16,6 @@ void Human::display(Displayer *displayer) {
 
 void Human::setAction(Field &field) {
    setNewAction(new Move(this, field, 1));
-}
-
-int Human::getSpeed() const {
-   return 1;
 }
 
 void Human::actionWhenDie(Field &field) {
