@@ -42,7 +42,7 @@ private:
    /**
     * Number of simulations for statistics
     */
-   std::size_t NB_SIMULATIONS = 10000;
+   static const std::size_t NB_SIMULATIONS = 10000;
    std::size_t nbInitialHumans;
    std::size_t nbInitialVampires;
 };
