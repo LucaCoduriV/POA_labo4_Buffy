@@ -11,14 +11,14 @@
 
 using namespace std;
 
-Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans,
-             size_t nbVampires, FieldEventListener *eventListener) :
-   Field(fieldWidth, fieldHeight, nbHumans, nbVampires) {
-   this->eventListener = eventListener;
+Field::Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans,
+             size_t nbVampires) :
+   Field(fieldWidth, fieldHeight, nbHumans, nbVampires, nullptr) {
 }
 
-Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans, size_t
-nbVampires) : width(fieldWidth), height(fieldHeight) {
+Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
+nbVampires, FieldEventListener *eventListener) : width(fieldWidth), height
+(fieldHeight), eventListener(eventListener) {
 
    if (fieldHeight <= 0 || fieldWidth <= 0)
       invalid_argument("Field's height and width should be greater than 0.");
