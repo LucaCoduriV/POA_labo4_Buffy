@@ -11,13 +11,17 @@
 class ColoredConsoleDisplayer : public ConsoleDisplayer{
 public:
    ColoredConsoleDisplayer(unsigned height, unsigned width);
+
+
+   void showStats(double percent) const override;
+
+protected:
    std::string getHumanChar() override;
    std::string getHunterChar() override;
    std::string getVampireChar() override;
 
-   void showStats(double percent) const override;
-
 private:
+
    static const char* RED;
    static const char* BLUE;
    static const char* YELLOW;
