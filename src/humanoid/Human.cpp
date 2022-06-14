@@ -10,8 +10,9 @@ Human::Human(Vector position) : Humanoid(position) {
 
 }
 
-void Human::display(Displayer* displayer) {
-   displayer->display(*this);
+void Human::display(Displayer *displayer) {
+   if (displayer)
+      displayer->display(*this);
 }
 
 void Human::setAction(Field &field) {

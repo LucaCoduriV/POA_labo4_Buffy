@@ -4,8 +4,8 @@
 
 using namespace std;
 
-const int FIELD_HEIGHT = 10;
-const int FIELD_WIDTH = 10;
+const int FIELD_HEIGHT = 50;
+const int FIELD_WIDTH = 50;
 
 int main() {
 

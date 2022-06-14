@@ -1,7 +1,3 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #include "Field.hpp"
 #include "humanoid/Humanoid.hpp"
 #include "humanoid/Human.hpp"
@@ -18,7 +14,7 @@ Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans,
 
 Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans, size_t
 nbVampires, FieldEventListener *eventListener) : width(fieldWidth), height
-(fieldHeight), eventListener(eventListener) {
+   (fieldHeight), eventListener(eventListener) {
 
    if (fieldHeight <= 0 || fieldWidth <= 0)
       invalid_argument("Field's height and width should be greater than 0.");
@@ -35,8 +31,8 @@ nbVampires, FieldEventListener *eventListener) : width(fieldWidth), height
 
    for (size_t i = 0; i < nbVampires; i++)
       humanoids.push_front(new Vampire(Vector(
-         createRandomNb(0,fieldWidth - 1),
-         createRandomNb(0,fieldHeight - 1))));
+         createRandomNb(0, fieldWidth - 1),
+         createRandomNb(0, fieldHeight - 1))));
 }
 
 Field::~Field() {
@@ -48,10 +44,10 @@ Field::~Field() {
 
 std::size_t Field::nextTurn() {
    // Déterminer les prochaines actions
-   for (auto & humanoid : humanoids)
+   for (auto &humanoid: humanoids)
       humanoid->setAction(*this);
    // Executer les actions
-   for (auto & humanoid : humanoids)
+   for (auto &humanoid: humanoids)
       humanoid->executeAction(*this);
    // Enlever les humanoides tués
    for (auto it = humanoids.begin(); it != humanoids.end();)
@@ -63,11 +59,12 @@ std::size_t Field::nextTurn() {
    return turn++;
 }
 
-void Field::addHumanoid(Humanoid* humanoid) {
-   humanoids.push_front(humanoid);
+void Field::addHumanoid(Humanoid *humanoid) {
+   if (humanoid)
+      humanoids.push_front(humanoid);
 }
 
-list<Humanoid*> Field::getHumanoids() const {
+list<Humanoid *> Field::getHumanoids() const {
    return humanoids;
 }
 
@@ -84,17 +81,17 @@ std::size_t Field::getTurn() const {
 }
 
 void Field::vampireIsKilled() {
-   if(eventListener != nullptr)
+   if (eventListener != nullptr)
       eventListener->onVampireKilled();
 }
 
 void Field::humanIsKilled() {
-   if(eventListener != nullptr)
+   if (eventListener != nullptr)
       eventListener->onHumanKilled();
 }
 
 void Field::vampireIsCreated() {
-   if(eventListener != nullptr)
+   if (eventListener != nullptr)
       eventListener->onVampireCreated();
 }
 

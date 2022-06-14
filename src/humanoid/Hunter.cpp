@@ -1,7 +1,3 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #include "Hunter.hpp"
 #include "../action/Move.hpp"
 #include "../action/Kill.hpp"
@@ -9,20 +5,19 @@
 #include "../ui/Displayer.hpp"
 #include "../Field.hpp"
 
-#include <utility>
-
 using namespace std;
 
 Hunter::Hunter(Vector position) : Humanoid(position) {
 
 }
 
-void Hunter::display(Displayer* displayer) {
-   displayer->display(*this);
+void Hunter::display(Displayer *displayer) {
+   if (displayer)
+      displayer->display(*this);
 }
 
 void Hunter::setAction(Field &field) {
-   Humanoid* toFollow = field.findNearestHumanoid<Vampire>((Humanoid *) this);
+   Humanoid *toFollow = field.findNearestHumanoid<Vampire>((Humanoid *) this);
    if (toFollow) {
       if (isNextTo(*toFollow))
          setNewAction(new Kill(this, toFollow));

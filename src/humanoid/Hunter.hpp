@@ -1,7 +1,3 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #ifndef POA_LABO4_BUFFY_HUNTER_HPP
 #define POA_LABO4_BUFFY_HUNTER_HPP
 
@@ -15,9 +11,13 @@
  */
 class Hunter : public Humanoid {
 public:
+   /**
+    * Hunter contructor.
+    * @param position the humanoid position
+    */
    explicit Hunter(Vector position);
 
-   void display(Displayer* displayer) override;
+   void display(Displayer *displayer) override;
 
    void setAction(Field &field) override;
 

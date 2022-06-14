@@ -116,6 +116,9 @@ private:
 
 template<class otherClass>
 otherClass *Field::findNearestHumanoid(Humanoid *humanoid) const {
+   if (!humanoid)
+      return 0;
+
    otherClass *nearest = nullptr;
    double dist = std::numeric_limits<double>::max();
 

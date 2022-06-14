@@ -14,7 +14,9 @@ public:
    StatsCalculator(size_t nbHumanoids, size_t nbVampires);
 
    void onHumanKilled() override;
+
    void onVampireCreated() override;
+
    void onVampireKilled() override;
 
    size_t getNbHumans() const;

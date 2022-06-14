@@ -1,23 +1,20 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #include <iostream>
 #include "ConsoleDisplayer.hpp"
+
 using namespace std;
 
-ConsoleDisplayer::ConsoleDisplayer(unsigned height, unsigned width): grid(width,
-                                                                          height) {}
+ConsoleDisplayer::ConsoleDisplayer(unsigned height, unsigned width) : grid(width,
+                                                                           height) {}
 
-void ConsoleDisplayer::display(const Vampire& shared_humanoid) {
+void ConsoleDisplayer::display(const Vampire &shared_humanoid) {
    grid.drawInToBlackboard(shared_humanoid.getPosition(), getVampireChar());
 }
 
-void ConsoleDisplayer::display(const Hunter& shared_humanoid) {
+void ConsoleDisplayer::display(const Hunter &shared_humanoid) {
    grid.drawInToBlackboard(shared_humanoid.getPosition(), getHunterChar());
 }
 
-void ConsoleDisplayer::display(const Human& shared_humanoid) {
+void ConsoleDisplayer::display(const Human &shared_humanoid) {
    grid.drawInToBlackboard(shared_humanoid.getPosition(), getHumanChar());
 }
 
@@ -46,7 +43,7 @@ void ConsoleDisplayer::clear() {
 }
 
 void ConsoleDisplayer::showStats(double percent) const {
-   cout << percent << "%"  << endl;
+   cout << percent << "%" << endl;
 }
 
 void ConsoleDisplayer::showMenu(size_t turn) const {
@@ -66,7 +63,7 @@ Displayer::UserInput ConsoleDisplayer::getUserInput() const {
          input = UserInput::NEXT;
          break;
       case 'e': //TODO penser à changer en 'q'
-         input  = UserInput::QUIT;
+         input = UserInput::QUIT;
          break;
       default:
          throw runtime_error("Key not recognized");

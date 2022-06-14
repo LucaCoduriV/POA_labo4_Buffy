@@ -1,7 +1,3 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #include "Vampire.hpp"
 #include "../action/Kill.hpp"
 #include "../action/Move.hpp"
@@ -11,18 +7,15 @@
 #include "../Field.hpp"
 #include "Human.hpp"
 
-#include <utility>
+Vampire::Vampire(Vector position) : Humanoid(position) {}
 
-Vampire::Vampire(Vector position) : Humanoid(position) {
-
-}
-
-void Vampire::display(Displayer* displayer) {
-   displayer->display(*this);
+void Vampire::display(Displayer *displayer) {
+   if (displayer)
+      displayer->display(*this);
 }
 
 void Vampire::setAction(Field &field) {
-   Human* toFollow = field.findNearestHumanoid<Human>((Human*) this);
+   Human *toFollow = field.findNearestHumanoid<Human>((Human *) this);
 
    if (toFollow) {
       if (isNextTo(*toFollow)) {

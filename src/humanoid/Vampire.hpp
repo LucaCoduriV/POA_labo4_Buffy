@@ -11,9 +11,13 @@
  */
 class Vampire : public Humanoid {
 public:
+   /**
+    * Vampire constructor
+    * @param position the humanoid position
+    */
    explicit Vampire(Vector position);
 
-   void display(Displayer* displayer) override;
+   void display(Displayer *displayer) override;
 
    void setAction(Field &field) override;
 

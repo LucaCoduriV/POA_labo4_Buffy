@@ -21,23 +21,25 @@ public:
     * @param displayer displayer for outputs and inputs
     */
    Controller(int fieldWidth, int fieldHeight, std::size_t nbVampires,
-              std::size_t nbHumans, Displayer* displayer);
+              std::size_t nbHumans, Displayer *displayer);
 
 private:
    /**
     * Simulation main loop.
     */
    void mainLoop();
+
    /**
     * Display the current field.
     */
    void displayTurn() const;
+
    /**
     * Calculate and show statistics.
     */
    void stats() const;
 
-   Displayer* displayer;
+   Displayer *displayer;
    Field field;
    /**
     * Number of simulations for statistics

@@ -2,6 +2,7 @@
 #define POA_LABO4_BUFFY_VECTOR_HPP
 
 #include <iostream>
+
 /**
  * This class stores a vector in two dimensions.
  * It makes able to make operations between vectors with ease.
@@ -10,7 +11,7 @@
  */
 class Vector {
 public:
-   friend std::ostream& operator<<(std::ostream& os, const Vector& vector);
+   friend std::ostream &operator<<(std::ostream &os, const Vector &vector);
 
    /**
     * Adds two vectors.
@@ -18,7 +19,7 @@ public:
     * @param v2
     * @return
     */
-   friend Vector operator+(const Vector& v1, const Vector& v2);
+   friend Vector operator+(const Vector &v1, const Vector &v2);
 
    /**
     * Multiplies a vector with an other.
@@ -26,7 +27,7 @@ public:
     * @param mult
     * @return
     */
-   friend Vector operator*(const Vector& v1, int mult);
+   friend Vector operator*(const Vector &v1, int mult);
 
    /**
     * Multiplies a vector with a number.
@@ -34,22 +35,22 @@ public:
     * @param v1
     * @return
     */
-   friend Vector operator*(int mult, const Vector& v1);
+   friend Vector operator*(int mult, const Vector &v1);
 
    Vector(int x, int y);
 
    Vector();
 
-   Vector& operator=(const Vector& other);
+   Vector &operator=(const Vector &other);
 
    /**
     * Calculates the distance between two vectors.
     * @param other
     * @return the distance
     */
-   double distance(const Vector& other) const;
+   double distance(const Vector &other) const;
 
-   Vector direction(const Vector& to) const;
+   Vector direction(const Vector &to) const;
 
    int getX() const;
 
