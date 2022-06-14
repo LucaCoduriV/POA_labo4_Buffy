@@ -7,7 +7,7 @@
 /**
  * Calculate the stats of multiple simulations of buffy killing vampires.
  *
- * @author Luca Coduri
+ * @author Luca Coduri & Chloé Fontaine
  */
 class StatsCalculator : public FieldEventListener {
 public:

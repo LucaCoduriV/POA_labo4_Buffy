@@ -5,6 +5,8 @@
 /**
  * This class stores a vector in two dimensions.
  * It makes able to make operations between vectors with ease.
+ *
+ * @authors Luca Coduri & Chloé Fontaine
  */
 class Vector {
 public:

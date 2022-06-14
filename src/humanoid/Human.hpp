@@ -24,7 +24,7 @@ public:
     *
     * @param field
     */
-   void actionWhenVampirized(Field& field) const;
+   void actionWhenVampirized(Field& field);
 };
 
 

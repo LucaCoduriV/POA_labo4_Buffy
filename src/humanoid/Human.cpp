@@ -27,7 +27,8 @@ void Human::actionWhenDie(Field &field) {
    field.humanIsKilled();
 }
 
-void Human::actionWhenVampirized(Field &field) const {
+void Human::actionWhenVampirized(Field &field) {
+   Humanoid::actionWhenDie(field);
    field.humanIsKilled();
    field.vampireIsCreated();
 }
