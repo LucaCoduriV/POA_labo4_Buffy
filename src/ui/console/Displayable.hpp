@@ -1,9 +1,9 @@
 #ifndef POA_LABO4_BUFFY_DISPLAYABLE_HPP
 #define POA_LABO4_BUFFY_DISPLAYABLE_HPP
-
+#include <memory>
 class Displayer;
 
-#include <memory>
+
 
 class Displayable {
 public:

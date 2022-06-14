@@ -1,13 +1,13 @@
 #ifndef POA_LABO4_BUFFY_DISPLAYER_H
 #define POA_LABO4_BUFFY_DISPLAYER_H
-
+#include <memory>
 class Vampire;
 
 class Hunter;
 
 class Human;
 
-#include <memory>
+
 
 /**
  * Interface for displaying the game.

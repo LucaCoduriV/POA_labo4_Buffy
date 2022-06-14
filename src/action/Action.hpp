@@ -1,11 +1,11 @@
 #ifndef POA_LABO4_BUFFY_ACTION_HPP
 #define POA_LABO4_BUFFY_ACTION_HPP
-
+#include <memory>
 class Humanoid;
 
 class Field;
 
-#include <memory>
+
 
 /**
  * Represents an action that can be performed by a humanoid.

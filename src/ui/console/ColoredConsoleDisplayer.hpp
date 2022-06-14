@@ -11,6 +11,7 @@
 class ColoredConsoleDisplayer : public ConsoleDisplayer{
 public:
    ColoredConsoleDisplayer(unsigned height, unsigned width);
+   virtual ~ColoredConsoleDisplayer() = default;
 
 
    void showStats(double percent) const override;

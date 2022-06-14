@@ -20,6 +20,7 @@ public:
     * @param width the displayer's width
     */
    ConsoleDisplayer(unsigned height, unsigned width);
+   virtual ~ConsoleDisplayer() = default;
 
    void display(const Vampire &shared_humanoid) override;
 
