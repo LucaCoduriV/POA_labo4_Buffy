@@ -1,14 +1,10 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #include "Controller.hpp"
 #include "StatsCalculator.hpp"
 
 using namespace std;
 
-Controller::Controller(unsigned fieldWidth, unsigned fieldHeight, unsigned
-nbVampires, unsigned nbHumans, Displayer* displayer) :
+Controller::Controller(int fieldWidth, int fieldHeight, size_t
+nbVampires, size_t nbHumans, Displayer* displayer) :
    displayer(displayer), field(fieldWidth, fieldHeight, nbHumans, nbVampires),
    nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {
 
@@ -47,6 +43,8 @@ void Controller::mainLoop() {
 
 void Controller::stats() const {
    StatsCalculator statsCalculator(nbInitialHumans, nbInitialVampires);
+
+   // Run simulation NB_SIMULATIONS times
    for (size_t i = 0; i < NB_SIMULATIONS; i++) {
 
       Field simField(field.getWidth(), field.getHeight(),

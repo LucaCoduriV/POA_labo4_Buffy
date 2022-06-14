@@ -6,14 +6,10 @@
 
 /**
  * Calculate the stats of multiple simulations of buffy killing vampires.
+ *
+ * @author Luca Coduri
  */
 class StatsCalculator : public FieldEventListener {
-   const size_t NB_HUMANS;
-   const size_t NB_VAMPIRES;
-   size_t humansCount;
-   size_t vampiresCount;
-   size_t nbSuccess = 0;
-   size_t nbSimulations = 0;
 public:
    StatsCalculator(size_t nbHumanoids, size_t nbVampires);
 
@@ -37,10 +33,17 @@ public:
    /**
     * This method gets the number of time the simulation
     * was successful in pourcentage.
-    * @return
+    * @return the success rate in percent
     */
    double getSuccessRate() const;
 
+private:
+   const size_t NB_HUMANS;
+   const size_t NB_VAMPIRES;
+   size_t humansCount;
+   size_t vampiresCount;
+   size_t nbSuccess = 0;
+   size_t nbSimulations = 0;
 };
 
 

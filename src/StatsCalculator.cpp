@@ -1,7 +1,3 @@
-//
-// Created by luca on 09/06/22.
-//
-
 #include <cstdlib>
 #include "StatsCalculator.hpp"
 

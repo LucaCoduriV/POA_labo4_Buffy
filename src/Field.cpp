@@ -11,14 +11,17 @@
 
 using namespace std;
 
-Field::Field(std::size_t fieldWidth, std::size_t fieldHeight, size_t nbHumans,
+Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans,
              size_t nbVampires, FieldEventListener *eventListener) :
    Field(fieldWidth, fieldHeight, nbHumans, nbVampires) {
    this->eventListener = eventListener;
 }
 
-Field::Field(size_t fieldWidth, size_t fieldHeight, size_t nbHumans, size_t
+Field::Field(int fieldWidth, int fieldHeight, size_t nbHumans, size_t
 nbVampires) : width(fieldWidth), height(fieldHeight) {
+
+   if (fieldHeight <= 0 || fieldWidth <= 0)
+      invalid_argument("Field's height and width should be greater than 0.");
 
    humanoids.push_front(new Hunter(Vector(
       createRandomNb(0, fieldWidth - 1),
@@ -34,6 +37,13 @@ nbVampires) : width(fieldWidth), height(fieldHeight) {
       humanoids.push_front(new Vampire(Vector(
          createRandomNb(0,fieldWidth - 1),
          createRandomNb(0,fieldHeight - 1))));
+}
+
+Field::~Field() {
+   for (auto it = humanoids.begin(); it != humanoids.end();) {
+      delete *it;
+      it = humanoids.erase(it);
+   }
 }
 
 std::size_t Field::nextTurn() {
@@ -57,15 +67,15 @@ void Field::addHumanoid(Humanoid* humanoid) {
    humanoids.push_front(humanoid);
 }
 
-const list<Humanoid*> Field::getHumanoids() const {
+list<Humanoid*> Field::getHumanoids() const {
    return humanoids;
 }
 
-std::size_t Field::getHeight() const {
+int Field::getHeight() const {
    return height;
 }
 
-std::size_t Field::getWidth() const {
+int Field::getWidth() const {
    return width;
 }
 

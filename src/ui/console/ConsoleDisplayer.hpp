@@ -13,7 +13,7 @@
 
 /**
  * This class shows the field in a console.
- * @author Luca Coduri & Chloé Fontaine
+ * @authors Luca Coduri & Chloé Fontaine
  */
 class ConsoleDisplayer : public Displayer {
 public:

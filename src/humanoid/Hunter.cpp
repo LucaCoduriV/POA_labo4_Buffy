@@ -25,18 +25,18 @@ void Hunter::setAction(Field &field) {
    Humanoid* toFollow = field.findNearestHumanoid<Vampire>((Humanoid *) this);
    if (toFollow) {
       if (isNextTo(*toFollow))
-         setNextAction(new Kill(this, toFollow));
+         setNewAction(new Kill(this, toFollow));
       else
-         setNextAction(new Move(this, field, 2, *toFollow));
+         setNewAction(new Move(this, field, 2, *toFollow));
 
    } else
-      setNextAction(new Move(this, field, 1));
+      setNewAction(new Move(this, field, 1));
 }
 
 int Hunter::getSpeed() const {
    return 2;
 }
 
-void Hunter::actionWhenDie(Field &field) const {
-   // do nothing
+void Hunter::actionWhenDie(Field &field) {
+   Humanoid::actionWhenDie(field);
 }

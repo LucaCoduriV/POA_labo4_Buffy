@@ -3,7 +3,7 @@
 
 /**
  * EventListener interface for the Field class.
- * @author Luca Coduri & Chloe Fontaine
+ * @author Luca Coduri & Chloé Fontaine
  */
 class FieldEventListener {
 public:

@@ -18,7 +18,7 @@ public:
 
    int getSpeed() const override;
 
-   void actionWhenDie(Field &field) const override;
+   void actionWhenDie(Field &field) override;
 
    void actionWhenVampirized(Field& field) const;
 };

@@ -1,16 +1,15 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #include "Humanoid.hpp"
 #include "../ui/Displayer.hpp"
-
-#include <utility>
 
 using namespace std;
 
 Humanoid::Humanoid(Vector position) : position(position) {
 
+}
+
+Humanoid::~Humanoid() {
+   if (action)
+      delete action;
 }
 
 Vector Humanoid::getPosition() const {
@@ -32,12 +31,10 @@ void Humanoid::setPosition(const Vector &position) {
    this->position = position;
 }
 
-void Humanoid::setNextAction(Action* action) {
-   this->action = action;
-}
-
-void Humanoid::setAlive(bool alive) {
-   this->alive = alive;
+void Humanoid::setNewAction(Action* action) {
+   if (action)
+      delete action;
+   action = action;
 }
 
 Action *Humanoid::getAction() const {
@@ -46,6 +43,11 @@ Action *Humanoid::getAction() const {
 
 bool Humanoid::isNextTo(const Humanoid& other) const {
    double dist = position.distance(other.position);
-   //TODO peut-être à modifier
    return dist < 2;
 }
+
+void Humanoid::actionWhenDie(Field &field) {
+   alive = false;
+}
+
+

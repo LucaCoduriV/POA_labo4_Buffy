@@ -8,7 +8,7 @@ int main() {
 
    try {
       //TODO récupérer inputs utilisateurs
-      Controller controller(20, 20, 5, 5, new ColoredConsoleDisplayer(20, 20));
+      Controller controller(50, 50, 10, 20, new ColoredConsoleDisplayer(50, 50));
    } catch (const invalid_argument& e) {
       cout << e.what();
    }

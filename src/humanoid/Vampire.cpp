@@ -30,11 +30,11 @@ void Vampire::setAction(Field &field) {
          int kill = createRandomNb(0, 1);
 
          if (kill)
-            setNextAction(new Kill(this, toFollow));
+            setNewAction(new Kill(this, toFollow));
          else
-            setNextAction(new Vampirize(this, toFollow));
+            setNewAction(new Vampirize(this, toFollow));
       } else
-         setNextAction(new Move(this, field, 1, *toFollow));
+         setNewAction(new Move(this, field, 1, *toFollow));
    }
 }
 
@@ -42,6 +42,7 @@ int Vampire::getSpeed() const {
    return 1;
 }
 
-void Vampire::actionWhenDie(Field &field) const {
+void Vampire::actionWhenDie(Field &field) {
+   Humanoid::actionWhenDie(field);
    field.vampireIsKilled();
 }
