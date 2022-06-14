@@ -7,8 +7,6 @@
 #include "../humanoid/Humanoid.hpp"
 #include "../Field.hpp"
 
-#include <utility>
-
 using namespace std;
 
 

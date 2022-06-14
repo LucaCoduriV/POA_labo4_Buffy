@@ -62,7 +62,7 @@ public:
 
    /**
     * Action to call to kill a humanoid.
-    * @param field
+    * @param field the humanoid's field
     */
    virtual void actionWhenDie(Field& field);
 

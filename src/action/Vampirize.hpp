@@ -10,11 +10,16 @@
 #include "../humanoid/Human.hpp"
 
 /**
- * This class is used to vampirize an other Humanoid.
- * @author Chloé Fontaine
+ * Represents the action of turning into a vampire another human.
+ * @author Luca Coduri & Chloé Fontaine
  */
 class Vampirize : public Action {
 public:
+   /**
+    *
+    * @param humanoid
+    * @param toVampirize
+    */
    Vampirize(Humanoid* humanoid, Human* toVampirize);
 
    void execute(Field& field) override;
