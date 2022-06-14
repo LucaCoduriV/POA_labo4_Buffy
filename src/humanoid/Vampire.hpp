@@ -5,6 +5,10 @@
 #include "Humanoid.hpp"
 #include "../Vector.hpp"
 
+/**
+ * Represents a vampire
+ * @authors Luca Coduri & Chloé Fontaine
+ */
 class Vampire : public Humanoid {
 public:
    explicit Vampire(Vector position);

@@ -1,7 +1,3 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #ifndef POA_LABO4_BUFFY_KILL_HPP
 #define POA_LABO4_BUFFY_KILL_HPP
 
@@ -9,11 +5,16 @@
 #include "Action.hpp"
 
 /**
- * This class is used to kill an other Humanoid.
- * @author Chloé Fontaine
+ * Represents the action of killing another humanoid.
+ * @author Luca Coduri & Chloé Fontaine
  */
 class Kill : public Action {
 public:
+   /**
+    * Kill action constructor.
+    * @param humanoid killer humanoid
+    * @param toKill killed humanoid
+    */
    Kill(Humanoid* humanoid, Humanoid* toKill);
 
    void execute(Field& field) override;

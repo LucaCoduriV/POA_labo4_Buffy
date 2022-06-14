@@ -9,6 +9,10 @@
 #include "Humanoid.hpp"
 #include "../Vector.hpp"
 
+/**
+ * Represents a hunter.
+ * @authors Luca Coduri & Chloé Fontaine
+ */
 class Hunter : public Humanoid {
 public:
    explicit Hunter(Vector position);

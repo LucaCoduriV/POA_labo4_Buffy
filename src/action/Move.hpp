@@ -9,11 +9,17 @@
 #include "Action.hpp"
 
 /**
- * This class is used to move an Humanoid.
- * @author Chloé Fontaine
+ * Represents the action of moving a humanoid.
+ * @author Luca Coduri & Chloé Fontaine
  */
 class Move : public Action {
 public:
+   /**
+    * Move action constructor
+    * @param humanoid
+    * @param field
+    * @param speed
+    */
    Move(Humanoid* humanoid, const Field& field, int speed);
 
    Move(Humanoid* humanoid, const Field& field, int speed, const Humanoid& toFollow);

@@ -9,6 +9,10 @@
 #include "Humanoid.hpp"
 #include "../Vector.hpp"
 
+/**
+ * Represents a human.
+ * @authors Luca Coduri & Chloé Fontaine
+ */
 class Human : public Humanoid {
 public:
    explicit Human(Vector position);
@@ -21,8 +25,8 @@ public:
    void actionWhenDie(Field &field) override;
 
    /**
-    *
-    * @param field
+    * Action to call when a human is turned into a vampire.
+    * @param field he humanoid's field
     */
    void actionWhenVampirized(Field& field);
 };
