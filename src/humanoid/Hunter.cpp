@@ -26,7 +26,3 @@ void Hunter::setAction(Field &field) {
    } else
       setNewAction(new Move(this, field, 1));
 }
-
-void Hunter::actionWhenDie(Field &field) {
-   Humanoid::actionWhenDie(field);
-}

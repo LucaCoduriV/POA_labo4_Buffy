@@ -20,8 +20,6 @@ public:
    void display(Displayer *displayer) override;
 
    void setAction(Field &field) override;
-
-   void actionWhenDie(Field &field) override;
 };
 
 
