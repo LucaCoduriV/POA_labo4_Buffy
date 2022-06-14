@@ -132,6 +132,7 @@
       <attribute const="false" defaultValue="" isStatic="false" name="height" type="int" visibility="PRIVATE"/>
       <attribute const="false" defaultValue="" isStatic="false" name="humanoids" type="list&lt;Humanoid*&gt;" visibility="PRIVATE"/>
       <attribute const="false" defaultValue="" isStatic="false" name="eventListener" type="FieldEventListener*" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="~Field" returnType="" view="DEFAULT" visibility="PUBLIC"/>
       <method is-constructor="true" isAbstract="false" isStatic="false" name="Field" returnType="" view="DEFAULT" visibility="PUBLIC">
         <variable const="false" name="fieldWidth" type="unsigned"/>
         <variable const="false" name="fieldHeight" type="unsigned"/>
@@ -403,7 +404,7 @@
         <x>970</x>
         <y>0</y>
         <w>720</w>
-        <h>310</h>
+        <h>325</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="100160" displayAttributes="true" displayDefault="true" displayMethods="true">
