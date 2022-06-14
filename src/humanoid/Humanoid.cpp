@@ -31,10 +31,10 @@ void Humanoid::setPosition(const Vector &position) {
    this->position = position;
 }
 
-void Humanoid::setNewAction(Action* action) {
+void Humanoid::setNewAction(Action* newAction) {
    if (action)
       delete action;
-   action = action;
+   action = newAction;
 }
 
 Action *Humanoid::getAction() const {

@@ -15,7 +15,6 @@ Kill::Kill(Humanoid* humanoid, Humanoid* toKill) : Action(humanoid), toKill(toKi
 
 void Kill::execute(Field& field) {
    if (toKill && toKill->isAlive()) {
-      toKill->setAlive(false);
       toKill->actionWhenDie(field);
    }
 }

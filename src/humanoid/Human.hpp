@@ -20,6 +20,10 @@ public:
 
    void actionWhenDie(Field &field) override;
 
+   /**
+    *
+    * @param field
+    */
    void actionWhenVampirized(Field& field) const;
 };
 

@@ -75,9 +75,9 @@ protected:
 
    /**
     * Set new action.
-    * @param action
+    * @param newAction
     */
-   void setNewAction(Action* action);
+   void setNewAction(Action* newAction);
 
    /**
     * Get action.
