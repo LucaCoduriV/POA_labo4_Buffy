@@ -65,7 +65,7 @@ Displayer::UserInput ConsoleDisplayer::getUserInput() const {
       case 'n':
          input = UserInput::NEXT;
          break;
-      case 'e': //TODO penser à changer en 'q'
+      case 'q':
          input  = UserInput::QUIT;
          break;
       default:
