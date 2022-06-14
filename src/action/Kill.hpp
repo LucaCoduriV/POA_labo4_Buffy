@@ -1,7 +1,6 @@
 #ifndef POA_LABO4_BUFFY_KILL_HPP
 #define POA_LABO4_BUFFY_KILL_HPP
 
-
 #include "Action.hpp"
 
 /**
@@ -12,8 +11,8 @@ class Kill : public Action {
 public:
    /**
     * Kill action constructor.
-    * @param humanoid killer humanoid
-    * @param toKill killed humanoid
+    * @param humanoid the killer humanoid
+    * @param toKill the humanoid to kill
     */
    Kill(Humanoid* humanoid, Humanoid* toKill);
 

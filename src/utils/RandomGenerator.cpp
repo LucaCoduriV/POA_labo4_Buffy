@@ -12,5 +12,5 @@ int createRandomNb(int min, int max) {
       first = false;
    }
 
-   return min + (rand() % ( max - min + 1 ) );
+   return min + (rand() % (max - min + 1));
 }

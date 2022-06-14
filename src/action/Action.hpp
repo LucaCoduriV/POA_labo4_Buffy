@@ -1,11 +1,8 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #ifndef POA_LABO4_BUFFY_ACTION_HPP
 #define POA_LABO4_BUFFY_ACTION_HPP
 
 class Humanoid;
+
 class Field;
 
 #include <memory>
@@ -20,23 +17,25 @@ public:
     * This method is called when the humanoid performs the action.
     * @param field the field
     */
-   virtual void execute(Field& field) = 0;
+   virtual void execute(Field &field) = 0;
+
    virtual ~Action() = default;
+
 protected:
    /**
     * Action constructor.
-    * @param humanoid
+    * @param humanoid the humanoid
     */
-   explicit Action(Humanoid* humanoid);
+   explicit Action(Humanoid *humanoid);
 
    /**
     * Get the humanoid that performs the action
     * @return the humanoid
     */
-   Humanoid* getHumanoid();
+   Humanoid *getHumanoid();
 
 private:
-   Humanoid* humanoid;
+   Humanoid *humanoid;
 };
 
 

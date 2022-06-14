@@ -1,7 +1,3 @@
-//
-// Created by cfont on 19.05.2022.
-//
-
 #ifndef POA_LABO4_BUFFY_HUMAN_HPP
 #define POA_LABO4_BUFFY_HUMAN_HPP
 
@@ -15,8 +11,13 @@
  */
 class Human : public Humanoid {
 public:
+   /**
+    * Human constructor.
+    * @param position the human position
+    */
    explicit Human(Vector position);
-   void display(Displayer* displayer) override;
+
+   void display(Displayer *displayer) override;
 
    void setAction(Field &field) override;
 
@@ -28,7 +29,7 @@ public:
     * Action to call when a human is turned into a vampire.
     * @param field he humanoid's field
     */
-   void actionWhenVampirized(Field& field);
+   void actionWhenVampirized(Field &field);
 };
 
 

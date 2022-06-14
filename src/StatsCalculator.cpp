@@ -3,15 +3,15 @@
 
 
 void StatsCalculator::onHumanKilled() {
-      humansCount--;
+   humansCount--;
 }
 
 void StatsCalculator::onVampireCreated() {
-      vampiresCount++;
+   vampiresCount++;
 }
 
 void StatsCalculator::onVampireKilled() {
-      vampiresCount--;
+   vampiresCount--;
 }
 
 size_t StatsCalculator::getNbHumans() const {
@@ -23,11 +23,11 @@ size_t StatsCalculator::getNbVampires() const {
 }
 
 StatsCalculator::StatsCalculator(size_t nbHumanoids, size_t nbVampires)
-: NB_HUMANS(nbHumanoids), NB_VAMPIRES(nbVampires), humansCount(nbHumanoids),
-vampiresCount(nbVampires) {}
+   : NB_HUMANS(nbHumanoids), NB_VAMPIRES(nbVampires), humansCount(nbHumanoids),
+     vampiresCount(nbVampires) {}
 
 void StatsCalculator::done() {
-   if (getNbHumans() > 0){
+   if (getNbHumans() > 0) {
       nbSuccess++;
    }
    nbSimulations++;
@@ -36,5 +36,5 @@ void StatsCalculator::done() {
 }
 
 double StatsCalculator::getSuccessRate() const {
-   return (double)nbSuccess / (double)nbSimulations * 100;
+   return (double) nbSuccess / (double) nbSimulations * 100;
 }

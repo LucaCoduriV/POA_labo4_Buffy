@@ -4,7 +4,7 @@
 using namespace std;
 
 Controller::Controller(int fieldWidth, int fieldHeight, size_t
-nbVampires, size_t nbHumans, Displayer* displayer) :
+nbVampires, size_t nbHumans, Displayer *displayer) :
    displayer(displayer), field(fieldWidth, fieldHeight, nbHumans, nbVampires),
    nbInitialHumans(nbHumans), nbInitialVampires(nbVampires) {
 
@@ -17,7 +17,7 @@ nbVampires, size_t nbHumans, Displayer* displayer) :
 void Controller::displayTurn() const {
    displayer->clear();
 
-   for(auto& x : field.getHumanoids()) {
+   for (auto &x: field.getHumanoids()) {
       x->display(displayer);
    }
 
@@ -30,7 +30,13 @@ void Controller::mainLoop() {
 
    do {
       displayer->showMenu(field.getTurn());
-      input = displayer->getUserInput();
+      try {
+         input = displayer->getUserInput();
+      } catch (const runtime_error& e) {
+         cout << e.what();
+         continue;
+      }
+
 
       if (input == Displayer::UserInput::NEXT) {
          field.nextTurn();
@@ -48,11 +54,11 @@ void Controller::stats() const {
    for (size_t i = 0; i < NB_SIMULATIONS; i++) {
 
       Field simField(field.getWidth(), field.getHeight(),
-                     nbInitialHumans,nbInitialVampires, &statsCalculator);
+                     nbInitialHumans, nbInitialVampires, &statsCalculator);
 
       do {
          simField.nextTurn();
-      } while(statsCalculator.getNbVampires() != 0);
+      } while (statsCalculator.getNbVampires() != 0);
 
       statsCalculator.done();
 
